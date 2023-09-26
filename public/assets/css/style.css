@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2E2924;
+    box-sizing: border-box;
+}
+.error {
+    color: red;
+}
+nav {
+    background-color: #6AA84F;
+}
+
+.txtNavbar {
+    font-family: 'Roboto', sans-serif;
+    color: #335126!important;
+}
+.navbar-nav .nav-item a.nav-link:hover {
+    color: black!important;
+}
+
+.custom-icon {
+    font-size: 24px;
+}
+
+/* #modalUserLogin {
+    font-family: 'Roboto', sans-serif;
+}
+.modal-content {
+    background: #4A433B;
+    color:#f0f0f0;
+} */
+#bgRegister {
+    /* height: 25vh; */
+    background-color: #6AA84F;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    font-family: 'Roboto', sans-serif;
+}
+#createAccount {
+    background-color: #6AA84F;
+    font-family: 'Roboto', sans-serif;
+    color:#f0f0f0;
+    font-weight: 600;
+}
+#connectAccount {
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    color:#6AA84F;
+    font-weight: 600;
+}
+#nav-offcanvas {
+    font-family: 'Roboto', sans-serif;
+}
+form {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #f0f0f0;
+}
+#button-discord {
+    background-color: #5865F2;
+}
+h1{
+    font-family: 'Bebas Neue', sans-serif;
+    color: #f0f0f0;
+}
+h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #f0f0f0;
+}
+h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    /* font-size: 25px; */
+}
+p {
+    font-family: 'Roboto', sans-serif;
+    color: #f0f0f0;
+}
+li {
+    font-family: 'Roboto', sans-serif;
+    color: #335126;
+}
+.liDofus {
+    font-family: 'Roboto', sans-serif;
+    color: white!important;
+}
+hr {
+    opacity: 1;
+    border-width: 3px;
+    color: black;
+    width: 50%;
+    margin: 0px 25%;
+}
+/* .card img {
+    height: 20vh;
+} */
+#title-card-white {
+    font-family: 'Roboto', sans-serif;
+    color: #f0f0f0;
+    font-weight: 600;
+}
+#bg-color-top-bottom-card {
+    background-color: #4A433B;
+}
+#bg-color-body-card {
+    background-color: #3C3630;
+}
+#button-green {
+    background-color: #6AA84F;
+    font-family: 'Roboto', sans-serif;
+    color:#f0f0f0;
+    font-weight: 600;
+}
+#bgColorText {
+    background-color: #4A433B;
+}
+table {
+    font-family: 'Roboto', sans-serif;
+}
+.arrow-left {
+    height: 7vh;
+    color: #6AA84F;
+}
