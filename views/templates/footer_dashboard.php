@@ -1,7 +1,7 @@
 <footer>
         <div class="container-fluid bg-black">
             <div class="row py-2">
-                <div class="col text-center">
+                <div class="col text-center fs-5">
                     <p>Dofus est un MMORPG édité par Ankama. "DofusUniverse" est un site non-officiel sans aucun lien
                         avec Ankama.
                         Certaines illustrations sont la propriété d'Ankama Studio et de Dofus - <span

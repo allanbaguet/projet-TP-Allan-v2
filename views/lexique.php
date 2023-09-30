@@ -12,15 +12,9 @@
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10 p-3 rounded fs-5 my-4" id="bgColorText">
-                <p>Ankama est une société française détenant le capital de plusieurs entreprises spécialisées dans le
-                    domaine de la création numérique et artistique.</p>
-
-                <p>Historiquement, la société débute avec le développement web en tant qu'agence de création web, mais
-                    elle est principalement connue pour les jeux vidéo Dofus et Wakfu qu'elle développe dans un univers
-                    transmédia (le Krosmoz), ainsi que la série d'animation Wakfu.</p>
-
-                <p>Après le succès de son premier jeu, Ankama Group se diversifie et édite des bandes dessinées, de la
-                    musique, des jeux de société, etc.</p>
+                Dans Dofus,les joueurs abrègent très souvent mots et phrases. 
+                La plupart connaissent tous ces abréviations (HL, XP, Agro etc.) mais certains pas. 
+                C'est pour cela que cette page a été créée.
             </div>
         </div>
     </div>
