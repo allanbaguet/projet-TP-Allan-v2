@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="DofusUniverse : un fan-site dédié au mmorpg Dofus, avec ses guides, ses donjons, et toutes les nouvelles actualités !">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -33,7 +34,7 @@
                 </div>
                 <hr class="d-lg-none">
                 <div class="offcanvas-body d-flex justify-content-center">
-                    <ul class="navbar-nav fs-5 fw-semibold" id="nav-offcanvas">
+                    <ul class="navbar-nav fw-semibold" id="nav-offcanvas">
                         <li class="nav-item p-2 ">
                             <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/dashboard_controller.php">Dashboard</a>
                         </li>
