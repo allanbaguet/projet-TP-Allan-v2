@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer-dashboard">
         <div class="container-fluid bg-black">
             <div class="row py-2">
                 <div class="col text-center fs-5">
