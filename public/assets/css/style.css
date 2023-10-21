@@ -121,3 +121,8 @@ table {
     color: #6AA84F;
 }
 
+@media (min-width: 1366px) {
+    .dashboard-home {
+        height: 66vh;
+    }
+}
