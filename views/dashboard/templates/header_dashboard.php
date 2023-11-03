@@ -36,16 +36,16 @@
                 <div class="offcanvas-body d-flex justify-content-center">
                     <ul class="navbar-nav fw-semibold" id="nav-offcanvas">
                         <li class="nav-item p-2 ">
-                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/dashboard_controller.php">Dashboard</a>
+                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/dashboard/dashboard_controller.php">Dashboard</a>
                         </li>
                         <li class="nav-item p-2 ">
                             <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/utilisateurs_controller.php">Utilisateurs</a>
                         </li>
                         <li class="nav-item p-2 ">
-                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/donjons_dash_controller.php">Donjons</a>
+                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/dashboard/dungeons/donjons_dash_controller.php">Donjons</a>
                         </li>
                         <li class="nav-item p-2 ">
-                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/guides_dash_controller.php">Guides</a>
+                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/dashboard/guides/guides_dash_controller.php">Guides</a>
                         </li>
                         <hr class="my-2 d-lg-none">
                         <li class="nav-item p-2">

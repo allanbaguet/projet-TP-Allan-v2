@@ -8,4 +8,9 @@ define('REGEX_BIRTHDAY', '^\d{4}-\d{2}-\d{2}$');
 define('REGEX_URL', '^https:\/\/www\.linkedin\.com\/in\/[a-zA-Z0-9-]+\/?$');
 define('REGEX_PASSWORD', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$');
 
+define('AUTHORIZED_IMAGE_FORMAT', ['image/jpeg', 'image/png']);
+define('FILE_SIZE', [3*1000*1000]);
+
+
+
 ?>

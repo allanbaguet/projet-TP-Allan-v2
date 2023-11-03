@@ -102,7 +102,12 @@ hr {
 }
 #bg-color-body-card {
     background-color: #3C3630;
+    display: flex;
+    flex-direction: column;
     box-shadow: 4px 4px 17px 4px #000000;
+}
+.card-body {
+    flex: 1;
 }
 #button-green {
     background-color: #6AA84F;
@@ -121,3 +126,8 @@ table {
     color: #6AA84F;
 }
 
+@media (min-width: 1366px) {
+    .dashboard-home {
+        height: 66vh;
+    }
+}
