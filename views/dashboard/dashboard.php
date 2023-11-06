@@ -7,7 +7,7 @@
         <h1 class="text-center ">Dashboard</h1>
         <div class="row my-5">
             <div class="col-xl-3 col-md-6 mb-4 my-5">
-                <a class="link-underline link-underline-opacity-0" href="/controllers/utilisateurs_controller.php">
+                <a class="link-underline link-underline-opacity-0" href="/controllers/dashboard/users/utilisateurs_controller.php">
                     <div class="card border-left-primary shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
