@@ -131,3 +131,29 @@ table {
         height: 66vh;
     }
 }
+
+
+.btn-research {
+    border-radius: 0px 20px 20px 0px;
+    margin-left: -7px;
+    background: #6AA84F;
+}
+#searchForm {
+    text-align: center; /* Center the form content horizontally */
+}
+/* Default styles for all screen sizes */
+#search, .catégorie-home {
+    width: 91%; /* Full width for smaller screens */
+}
+
+/* Media query for screens with a minimum width of 992px (typical for desktops) */
+@media (min-width: 992px) {
+    #search, .catégorie-home {
+        width: 96%; /* Adjust the width as needed for desktop screens */
+    }
+}
+
+.img-user {
+    height: 30vh;
+}
+

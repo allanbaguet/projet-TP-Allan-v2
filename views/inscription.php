@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row justify-content-center align-items-center">
-        <div class="col-md-6">
+        <div class="col-lg-4 col-md-6">
             <h2 class="text-uppercase text-center text-white py-3">Inscription</h2>
             <form id="registrationForm" action="" method="POST" novalidate>
                 <fieldset>

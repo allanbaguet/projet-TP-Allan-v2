@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS `Dofus_Universe` CHARACTER SET 'utf8';
 
 USE `Dofus_Universe`;
 
-DROP TABLE IF EXISTS `users`, `guides`, `dungeons`, `contents_guides`, `contents_dungeons`, `commentaries`;
+DROP TABLE IF EXISTS `users`, `guides`, `dungeons`, `commentaries`;
 
 
 CREATE TABLE users(
@@ -22,6 +22,18 @@ CREATE TABLE guides(
     `id_guides` INT AUTO_INCREMENT,
     `main_title` VARCHAR(100)  NOT NULL,
     `main_text` VARCHAR(255)  NOT NULL,
+    `sub_title_1` VARCHAR(50)  NOT NULL,
+    `sub_text` VARCHAR(255)  NOT NULL,
+    `picture_tier_list` VARCHAR(50)  NOT NULL,
+    `title_card_1` VARCHAR(50)  NOT NULL,
+    `picture_card_1` VARCHAR(50)  NOT NULL,
+    `text_card_1` VARCHAR(255)  NOT NULL,
+    `title_card_2` VARCHAR(50)  NOT NULL,
+    `picture_card_2` VARCHAR(50)  NOT NULL,
+    `text_card_2` VARCHAR(255)  NOT NULL,
+    `title_card_3` VARCHAR(50)  NOT NULL,
+    `picture_card_3` VARCHAR(50)  NOT NULL,
+    `text_card_3` VARCHAR(255)  NOT NULL,
     `posted_at` DATETIME,
     `modified_at` DATETIME,
     `id_users` INT NOT NULL,
@@ -30,32 +42,38 @@ CREATE TABLE guides(
 );
 
 CREATE TABLE dungeons(
-    `id_dungeons` INT AUTO_INCREMENT,
-    `title` VARCHAR(100)  NOT NULL,
-    `posted_at` DATETIME,
-    `modified_at` DATETIME,
-    `id_users` INT NOT NULL,
-    PRIMARY KEY(`id_dungeons`),
-    FOREIGN KEY(`id_users`) REFERENCES `users`(`id_users`)
-);
-
-CREATE TABLE contents_guides(
-    `id_contents` INT AUTO_INCREMENT,
-    `sub_title` VARCHAR(100) ,
-    `picture` VARCHAR(50) ,
-    `sub_text` VARCHAR(255) ,
-    `id_guides` INT NOT NULL,
-    PRIMARY KEY(`id_contents`),
-    FOREIGN KEY(`id_guides`) REFERENCES `guides`(`id_guides`)
-);
-
-CREATE TABLE contents_dungeons(
-    `id_contents` INT AUTO_INCREMENT,
-    `picture` VARCHAR(50) ,
-    `text` VARCHAR(255) ,
-    `id_dungeons` INT NOT NULL,
-    PRIMARY KEY(`id_contents`),
-    FOREIGN KEY(`id_dungeons`) REFERENCES `dungeons`(`id_dungeons`)
+   `id_dungeons` INT AUTO_INCREMENT,
+   `main_title` VARCHAR(100)  NOT NULL,
+   `picture_zone` VARCHAR(50)  NOT NULL,
+   `picture_key` VARCHAR(50)  NOT NULL,
+   `picture_pnj` VARCHAR(50)  NOT NULL,
+   `picture_card_mob_1` VARCHAR(50)  NOT NULL,
+   `text_card_mob_1` VARCHAR(255)  NOT NULL,
+   `picture_card_mob_2` VARCHAR(50)  NOT NULL,
+   `text_card_mob_2` VARCHAR(255)  NOT NULL,
+   `picture_card_mob_3` VARCHAR(50)  NOT NULL,
+   `text_card_mob_3` VARCHAR(255)  NOT NULL,
+   `picture_card_mob_4` VARCHAR(50)  NOT NULL,
+   `text_card_mob_4` VARCHAR(255)  NOT NULL,
+   `picture_card_mob_5` VARCHAR(50)  NOT NULL,
+   `text_card_mob_5` VARCHAR(255)  NOT NULL,
+   `title_card_room_1` VARCHAR(50)  NOT NULL,
+   `picture_card_room_1` VARCHAR(50)  NOT NULL,
+   `title_card_room_2` VARCHAR(50) ,
+   `picture_card_room_2` VARCHAR(50)  NOT NULL,
+   `title_card_room_3` VARCHAR(50)  NOT NULL,
+   `picture_card_room_3` VARCHAR(50)  NOT NULL,
+   `title_card_room_4` VARCHAR(50)  NOT NULL,
+   `picture_card_room_4` VARCHAR(50)  NOT NULL,
+   `title_card_room_boss` VARCHAR(50)  NOT NULL,
+   `picture_card_room_boss` VARCHAR(50)  NOT NULL,
+   `picture_card_boss` VARCHAR(50)  NOT NULL,
+   `text_card_boss` VARCHAR(255)  NOT NULL,
+   `posted_at` DATETIME,
+   `modified_at` DATETIME,
+   `id_users` INT NOT NULL,
+   PRIMARY KEY(`id_dungeons`),
+   FOREIGN KEY(`id_users`) REFERENCES `users`(`id_users`)
 );
 
 CREATE TABLE commentaries(

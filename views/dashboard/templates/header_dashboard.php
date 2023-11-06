@@ -17,16 +17,6 @@
             <a class="navbar-brand" href="/controllers/accueil_controller.php">
                 <img src="/public/assets/img/panoplies/aventurier/chapeau.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             </a>
-            <div class="user d-flex">
-                <a class="navbar-brand" href="/controllers/connexion_controller.php">
-                    <button class="btn">
-                        <i class="bi bi-person-fill text-white px-3 custom-icon"></i>
-                    </button>
-                </a>
-                <button class="navbar-toggler py-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <i class="bi bi-list text-white"></i>
-                </button>
-            </div>
             <div class="offcanvas offcanvas-end text-bg-dark w-75" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <img src="/public/assets/img/user-img.png" alt="image user" width="55" height="55">
@@ -58,6 +48,16 @@
                         </li> -->
                     </ul>
                 </div>
+            </div>
+            <div class="user d-flex">
+                <a class="navbar-brand" href="/controllers/connexion_controller.php">
+                    <button class="btn">
+                        <i class="bi bi-person-fill text-white px-3 custom-icon"></i>
+                    </button>
+                </a>
+                <button class="navbar-toggler py-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <i class="bi bi-list text-white"></i>
+                </button>
             </div>
         </div>
     </nav>
