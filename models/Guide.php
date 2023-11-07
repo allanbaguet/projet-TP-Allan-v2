@@ -9,18 +9,8 @@ class Guide
     private int $id_guides;
     private string $main_title;
     private string $main_text;
-    private string $sub_title_1;
-    private string $sub_text;
-    private string $picture_tier_list;
-    private string $title_card_1;
-    private string $picture_card_1;
-    private string $text_card_1;
-    private string $title_card_2;
-    private string $picture_card_2;
-    private string $text_card_2;
-    private string $title_card_3;
-    private string $picture_card_3;
-    private string $text_card_3;
+    private string $picture;
+    private string $description;
     private DateTime $posted_at;
     private string $modified_at;
     private ?string $deleted_at;
@@ -81,218 +71,42 @@ class Guide
     }
 
     /**
-     * méthode retournant la valeur du sous titre
+     * méthode retournant la valeur de l'image
      * @return string
      */
-    public function getSub_title_1(): string
+    public function getPicture(): string
     {
-        return $this->sub_title_1;
+        return $this->picture;
     }
 
     /**
-     * méthode affectant la valeur du sous titre
-     * @param string $created_at
+     * méthode affectant la valeur de l'image
+     * @param string $enddate
      */
-    public function setSub_title_1(string $sub_title_1)
+    public function setPicture(string $picture)
     {
-        $this->sub_title_1 = $sub_title_1;
+        $this->picture = $picture;
     }
 
+
     /**
-     * méthode retournant la valeur du sous texte
+     * méthode retournant la valeur de la description
      * @return string
      */
-    public function getSub_text(): string
+    public function getDescription(): string
     {
-        return $this->sub_text;
+        return $this->description;
     }
 
     /**
-     * méthode affectant la valeur ddu sous texte
-     * @param string $confirmed_at
+     * méthode affectant la valeur de la description
+     * @param string $enddate
      */
-    public function setSub_text(string $sub_text)
+    public function setDescription(string $description)
     {
-        $this->sub_text = $sub_text;
+        $this->description = $description;
     }
 
-    /**
-     * méthode retournant la valeur de l'image tier list
-     * @return string
-     */
-    public function getPicture_tier_list(): string
-    {
-        return $this->picture_tier_list;
-    }
-
-    /**
-     * méthode affectant la valeur de l'image tier list
-     * @param string $id_vehicles
-     */
-    public function setPicture_tier_list(string $picture_tier_list)
-    {
-        $this->picture_tier_list = $picture_tier_list;
-    }
-
-    /**
-     * méthode retournant la valeur du titre de la card
-     * @return string
-     */
-    public function getTitle_card_1(): string
-    {
-        return $this->title_card_1;
-    }
-
-    /**
-     * méthode affectant la valeur ddu titre de la card
-     * @param string $id_clients
-     */
-    public function setTitle_card_1(string $title_card_1)
-    {
-        $this->title_card_1 = $title_card_1;
-    }
-
-    /** méthode retournant la valeur de l'image de la card
-     * @return string
-     */
-    public function getPicture_card_1(): string
-    {
-        return $this->picture_card_1;
-    }
-
-    /**
-     * méthode affectant la valeur de l'image de la card
-     * @param string $id_rents
-     */
-    public function setPicture_card_1(string $picture_card_1)
-    {
-        $this->picture_card_1 = $picture_card_1;
-    }
-
-    /**
-     * méthode retournant la valeur du texte de la card
-     * @return string
-     */
-    public function getText_card_1(): string
-    {
-        return $this->text_card_1;
-    }
-
-    /**
-     * méthode affectant la valeur du texte de la card
-     * @param string $stardate
-     */
-    public function setText_card_1(string $text_card_1)
-    {
-        $this->text_card_1 = $text_card_1;
-    }
-
-    /**
-     * méthode retournant la valeur ddu titre de la card
-     * @return string
-     */
-    public function getTitle_card_2(): string
-    {
-        return $this->title_card_2;
-    }
-
-    /**
-     * méthode affectant la valeur ddu titre de la card
-     * @param string $id_clients
-     */
-    public function setTitle_card_2(string $title_card_2)
-    {
-        $this->title_card_2 = $title_card_2;
-    }
-
-    /** méthode retournant la valeur de l'image de la card
-     * @return string
-     */
-    public function getPicture_card_2(): string
-    {
-        return $this->picture_card_2;
-    }
-
-    /**
-     * méthode affectant la valeur de l'image de la card
-     * @param string $id_rents
-     */
-    public function setPicture_card_2(string $picture_card_2)
-    {
-        $this->picture_card_2 = $picture_card_2;
-    }
-
-    /**
-     * méthode retournant la valeur du texte de la card
-     * @return string
-     */
-    public function getText_card_2(): string
-    {
-        return $this->text_card_2;
-    }
-
-    /**
-     * méthode affectant la valeur du texte de la card
-     * @param string $stardate
-     */
-    public function setText_card_2(string $text_card_2)
-    {
-        $this->text_card_2 = $text_card_2;
-    }
-
-
-    /**
-     * méthode retournant la valeur ddu titre de la card
-     * @return string
-     */
-    public function getTitle_card_3(): string
-    {
-        return $this->title_card_3;
-    }
-
-    /**
-     * méthode affectant la valeur ddu titre de la card
-     * @param string $id_clients
-     */
-    public function setTitle_card_3(string $title_card_3)
-    {
-        $this->title_card_3 = $title_card_3;
-    }
-
-    /** méthode retournant la valeur de l'image de la card
-     * @return string
-     */
-    public function getPicture_card_3(): string
-    {
-        return $this->picture_card_3;
-    }
-
-    /**
-     * méthode affectant la valeur de l'image de la card
-     * @param string $id_rents
-     */
-    public function setPicture_card_3(string $picture_card_3)
-    {
-        $this->picture_card_3 = $picture_card_3;
-    }
-
-    /**
-     * méthode retournant la valeur du texte de la card
-     * @return string
-     */
-    public function getText_card_3(): string
-    {
-        return $this->text_card_3;
-    }
-
-    /**
-     * méthode affectant la valeur du texte de la card
-     * @param string $stardate
-     */
-    public function setText_card_3(string $text_card_3)
-    {
-        $this->text_card_3 = $text_card_3;
-    }
 
     /**
      * méthode retournant la valeur de la création du guide
@@ -414,32 +228,16 @@ class Guide
     public function insert(): bool
     {
         $pdo = Database::connect();
-        $sql = 'INSERT INTO `guides` (`main_title`, `main_text`, `sub_title_1`, `sub_text`, `picture_tier_list`, 
-        `title_card_1`, `picture_card_1`, `text_card_1`,
-        `title_card_2`, `picture_card_2`, `text_card_2`,
-        `title_card_3`, `picture_card_3`, `text_card_3`, `id_users`)
-        VALUES (:main_title, :main_text, :sub_title_1, :sub_text, :picture_tier_list,
-        :title_card_1, :picture_card_1, :text_card_1,
-        :title_card_2, :picture_card_2, :text_card_2,
-        :title_card_3, :picture_card_3, :text_card_3, :id_users);';
+        $sql = 'INSERT INTO `guides` (`main_title`, `main_text`, `picture`, `description`,`id_users`)
+        VALUES (:main_title, :main_text, :picture, :description, :id_users);';
         //:type -> marqueur nominatif (à utilisé quand une valeur vient de l'extérieur)
         $sth = $pdo->prepare($sql);
         //prepare -> éxecute la requête et protège d'injection SQL
         //prepare / bindValue -> méthode appartenant à un PDOStatement
         $sth->bindValue(':main_title', $this->getMain_title());
         $sth->bindValue(':main_text', $this->getMain_text());
-        $sth->bindValue(':sub_title_1', $this->getSub_title_1());
-        $sth->bindValue(':sub_text', $this->getSub_text());
-        $sth->bindValue(':picture_tier_list', $this->getPicture_tier_list());
-        $sth->bindValue(':title_card_1', $this->getTitle_card_1());
-        $sth->bindValue(':picture_card_1', $this->getPicture_card_1());
-        $sth->bindValue(':text_card_1', $this->getText_card_1());
-        $sth->bindValue(':title_card_2', $this->getTitle_card_2());
-        $sth->bindValue(':picture_card_2', $this->getPicture_card_2());
-        $sth->bindValue(':text_card_2', $this->getText_card_2());
-        $sth->bindValue(':title_card_3', $this->getTitle_card_3());
-        $sth->bindValue(':picture_card_3', $this->getPicture_card_3());
-        $sth->bindValue(':text_card_3', $this->getText_card_3());
+        $sth->bindValue(':picture', $this->getPicture());
+        $sth->bindValue(':description', $this->getDescription());
         $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
         //bindValue -> affecter une valeur à un marqueur nominatif
         $result = $sth->execute();
@@ -455,18 +253,8 @@ class Guide
         $pdo = Database::connect();
         $sql = 'UPDATE `guides` SET `main_title` = :main_title,
         `main_text` = :main_text,
-        `sub_title_1` = :sub_title_1,
-        `sub_text` = :sub_text,
-        `picture_tier_list` = :picture_tier_list,
-        `title_card_1` = :title_card_1,
-        `picture_card_1` = :picture_card_1,
-        `text_card_1` = :text_card_1,
-        `title_card_2` = :title_card_2,
-        `picture_card_2` = :picture_card_2,
-        `text_card_2` = :text_card_2,
-        `title_card_3` = :title_card_3,
-        `picture_card_3` = :picture_card_3,
-        `text_card_3` = :text_card_3,
+        `picture` = :picture,
+        `description` = :description,
         `id_users` = :id_users
         WHERE `id_guides` = :id_guides';
         $sth = $pdo->prepare($sql);
@@ -474,18 +262,8 @@ class Guide
         //prepare / bindValue -> méthode appartenant à un PDOStatement
         $sth->bindValue(':main_title', $this->getMain_title());
         $sth->bindValue(':main_text', $this->getMain_text());
-        $sth->bindValue(':sub_title_1', $this->getSub_title_1());
-        $sth->bindValue(':sub_text', $this->getSub_text());
-        $sth->bindValue(':picture_tier_list', $this->getPicture_tier_list());
-        $sth->bindValue(':title_card_1', $this->getTitle_card_1());
-        $sth->bindValue(':picture_card_1', $this->getPicture_card_1());
-        $sth->bindValue(':text_card_1', $this->getText_card_1());
-        $sth->bindValue(':title_card_2', $this->getTitle_card_2());
-        $sth->bindValue(':picture_card_2', $this->getPicture_card_2());
-        $sth->bindValue(':text_card_2', $this->getText_card_2());
-        $sth->bindValue(':title_card_3', $this->getTitle_card_3());
-        $sth->bindValue(':picture_card_3', $this->getPicture_card_3());
-        $sth->bindValue(':text_card_3', $this->getText_card_3());
+        $sth->bindValue(':picture', $this->getPicture());
+        $sth->bindValue(':description', $this->getDescription());
         $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
         $sth->bindValue(':id_guides', $this->getId_guides(), PDO::PARAM_INT);
         //bindValue -> affecter une valeur à un marqueur nominatif, PDO::PARAM_STR par defaut

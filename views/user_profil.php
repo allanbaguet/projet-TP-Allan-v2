@@ -13,7 +13,7 @@
                             <p>Inscrit le : 06/11/2023</p>
                             <p class="card-text">Vous pouvez modifier vos informations ci-dessous</p>
                             <div class="d-flex flex-column">
-                                <a href="#" class="btn mb-2" id="button-green">Modifier vos informations</a>
+                                <a href="/controllers/dashboard/users/update_utilisateurs_controller.php" class="btn mb-2" id="button-green">Modifier vos informations</a>
                                 <a href="/controllers/dashboard/dashboard_controller.php" class="btn" id="button-green">Accès au dashboard</a>
                             </div>
                         </div>

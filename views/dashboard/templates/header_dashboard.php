@@ -29,7 +29,7 @@
                             <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/dashboard/dashboard_controller.php">Dashboard</a>
                         </li>
                         <li class="nav-item p-2 ">
-                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/utilisateurs_controller.php">Utilisateurs</a>
+                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/dashboard/users/utilisateurs_controller.php">Utilisateurs</a>
                         </li>
                         <li class="nav-item p-2 ">
                             <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/dashboard/dungeons/donjons_dash_controller.php">Donjons</a>

@@ -6,48 +6,58 @@
     </a>
     <h1 class="text-center">Création de page donjon</h1>
     <div class="row my-5">
-    <div class="col-2"></div>
+        <div class="col-2"></div>
         <div class="col-8">
-            <form action="" method="POST" id="myForm">
-
+            <form method="POST" enctype="multipart/form-data" id="myForm">
+                <!-- titre du donjon -->
                 <div class="mb-3 row">
-                    <label for="titleDj" class="col-sm-4 col-form-label fw-semibold fs-5">Titre (élément fixe)</label>
+                    <label for="main_title" class="col-sm-4 col-form-label fw-semibold fs-5">Titre principal</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control titleDj" id="titleDj" name="titleDj">
-                        <!-- <small id="titleDjSmall" class="d-none text-danger">Cette valeur est
-                                incorrecte!</small> -->
+                        <input type="text" class="form-control titleDj" id="main_title" name="main_title">
+                        <div id="main_titleHelp" class="form-text error d-none text-danger">Le champ n'est pas valide</div>
+                        <p class="error"> <?= $errors['main_title'] ?? '' ?> </p>
                     </div>
                 </div>
                 <!-- j'ai retiré le titre dans la div à cloner car il n'y a qu'un titre par page -->
                 <!-- il n'y a que les screens et textarea à cloner -->
-                <div id="toClone">
+                <!-- <div id="toClone"> -->
 
-                    <div class="mb-3 row my-5">
-                        <label for="screenDj" class="col-sm-4 col-form-label fw-semibold fs-5">Screen</label>
-                        <div class="col-sm-8">
-                            <input type="file" class="form-control email" name="screenDj" id="screenDj">
-                            <!-- <small id="screenDjSmall" class="d-none text-danger">Cette valeur est incorrecte!</small> -->
-                        </div>
+                <!-- texte principal du donjon -->
+                <div class="mb-3 row">
+                    <label for="main_text" class="col-sm-4 col-form-label fw-semibold fs-5">Texte principal</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control titleDj" id="main_text" name="main_text">
+                        <div id="main_textHelp" class="form-text error d-none text-danger">Le champ n'est pas valide</div>
+                        <p class="error"> <?= $errors['main_text'] ?? '' ?> </p>
                     </div>
-
-                    <div class="mb-3 row my-5">
-                        <label for="descriptDj" class="col-sm-4 col-form-label fw-semibold fs-5">Descriptif</label>
-                        <div class="col-sm-8">
-                            <textarea class="form-control descriptDj" name="descriptDj" id="descriptDj"></textarea>
-                            <!-- <small id="descriptDjSmall" class="d-none text-danger">Cette valeur est
-                                    incorrecte!</small> -->
-                        </div>
-                    </div>
-
                 </div>
+                <!-- image du donjon -->
+                <div class="mb-3 row my-5">
+                    <label for="picture" class="col-sm-4 col-form-label fw-semibold fs-5">Image</label>
+                    <div class="col-sm-8">
+                        <input type="file" class="form-control picture" name="picture" id="picture">
+                        <div id="pictureHelp" class="form-text error d-none text-danger">Le champ n'est pas valide</div>
+                        <p class="error"> <?= $errors['picture'] ?? '' ?> </p>
+                    </div>
+                </div>
+                <!-- descriptif donjon -->
+                <div class="mb-3 row my-5">
+                    <label for="description" class="col-sm-4 col-form-label fw-semibold fs-5">Description</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control description" name="description" id="description"></textarea>
+                        <div id="descriptionHelp" class="form-text error d-none text-danger">Le champ n'est pas valide</div>
+                        <p class="error"> <?= $errors['description'] ?? '' ?> </p>
+                    </div>
+                </div>
+                <!-- </div> -->
                 <!-- les div cloné s'ajouterons dans cette div ci dessous vite -->
-                <div id="clones"></div>
+                <!-- <div id="clones"></div> -->
                 <div class="d-flex justify-content-evenly py-4">
-                    <div id="clonePreset" class="btn btn-lg btn-primary mb-3"> + </div>
+                    <!-- <div id="clonePreset" class="btn btn-lg btn-primary mb-3"> + </div> -->
 
                     <button type="submit" class="btn" id="button-green">Création</button>
 
-                    <button id="removeClone" type="button" class="btn btn-danger btn-lg mb-3"> - </button>
+                    <!-- <button id="removeClone" type="button" class="btn btn-danger btn-lg mb-3"> - </button> -->
 
                 </div>
 

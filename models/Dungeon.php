@@ -7,31 +7,9 @@ class Dungeon {
     //private correspond à la portée des attributs / $----- est un attribut
     private int $id_dungeons;
     private string $main_title;
-    private string $picture_zone;
-    private string $picture_key;
-    private string $picture_pnj;
-    private string $picture_card_mob_1;
-    private string $text_card_mob_1;
-    private string $picture_card_mob_2;
-    private string $text_card_mob_2;
-    private string $picture_card_mob_3;
-    private string $text_card_mob_3;
-    private string $picture_card_mob_4;
-    private string $text_card_mob_4;
-    private string $picture_card_mob_5;
-    private string $text_card_mob_5;
-    private string $title_card_room_1;
-    private string $picture_card_room_1;
-    private string $title_card_room_2;
-    private string $picture_card_room_2;
-    private string $title_card_room_3;
-    private string $picture_card_room_3;
-    private string $title_card_room_4;
-    private string $picture_card_room_4;
-    private string $title_card_room_boss;
-    private string $picture_card_room_boss;
-    private string $picture_card_boss;
-    private string $text_card_boss;
+    private string $main_text;
+    private string $picture;
+    private string $description;
     private DateTime $posted_at;
     private string $modified_at;
     private ?string $deleted_at;
@@ -58,279 +36,34 @@ class Dungeon {
         $this->main_title = $main_title;
     }
 
-
-    public function getPicture_zone(): string
+    public function getMain_text(): string
     {
-        return $this->picture_zone;
+        return $this->main_text;
     }
 
-    public function setPicture_zone(string $picture_zone)
+    public function setMain_text(string $main_text)
     {
-        $this->picture_zone = $picture_zone;
+        $this->main_text = $main_text;
     }
 
-
-    public function getPicture_key(): string
+    public function getPicture(): string
     {
-        return $this->picture_key;
+        return $this->picture;
     }
 
-    public function setPicture_key(string $picture_key)
+    public function setPicture(string $picture)
     {
-        $this->picture_key = $picture_key;
+        $this->picture = $picture;
     }
 
-
-    public function getPicture_pnj(): string
+    public function getDescription(): string
     {
-        return $this->picture_pnj;
+        return $this->description;
     }
 
-    public function setPicture_pnj(string $picture_pnj)
+    public function setDescription(string $description)
     {
-        $this->picture_pnj = $picture_pnj;
-    }
-
-
-    public function getPicture_card_mob_1(): string
-    {
-        return $this->picture_card_mob_1;
-    }
-
-    public function setPicture_card_mob_1(string $picture_card_mob_1)
-    {
-        $this->picture_card_mob_1 = $picture_card_mob_1;
-    }
-
-
-    public function getText_card_mob_1(): string
-    {
-        return $this->text_card_mob_1;
-    }
-
-    public function setText_card_mob_1(string $text_card_mob_1)
-    {
-        $this->text_card_mob_1 = $text_card_mob_1;
-    }
-
-
-    public function getPicture_card_mob_2(): string
-    {
-        return $this->picture_card_mob_2;
-    }
-
-    public function setPicture_card_mob_2(string $picture_card_mob_2)
-    {
-        $this->picture_card_mob_2 = $picture_card_mob_2;
-    }
-
-
-    public function getText_card_mob_2(): string
-    {
-        return $this->text_card_mob_2;
-    }
-
-    public function setText_card_mob_2(string $text_card_mob_2)
-    {
-        $this->text_card_mob_2 = $text_card_mob_2;
-    }
-
-
-    public function getPicture_card_mob_3(): string
-    {
-        return $this->picture_card_mob_3;
-    }
-
-    public function setPicture_card_mob_3(string $picture_card_mob_3)
-    {
-        $this->picture_card_mob_3 = $picture_card_mob_3;
-    }
-
-
-    public function getText_card_mob_3(): string
-    {
-        return $this->text_card_mob_3;
-    }
-
-    public function setText_card_mob_3(string $text_card_mob_3)
-    {
-        $this->text_card_mob_3 = $text_card_mob_3;
-    }
-
-
-    public function getPicture_card_mob_4(): string
-    {
-        return $this->picture_card_mob_4;
-    }
-
-    public function setPicture_card_mob_4(string $picture_card_mob_4)
-    {
-        $this->picture_card_mob_4 = $picture_card_mob_4;
-    }
-
-
-    public function getText_card_mob_4(): string
-    {
-        return $this->text_card_mob_4;
-    }
-
-    public function setText_card_mob_4(string $text_card_mob_4)
-    {
-        $this->text_card_mob_4 = $text_card_mob_4;
-    }
-
-
-    public function getPicture_card_mob_5(): string
-    {
-        return $this->picture_card_mob_5;
-    }
-
-    public function setPicture_card_mob_5(string $picture_card_mob_5)
-    {
-        $this->picture_card_mob_5 = $picture_card_mob_5;
-    }
-
-
-    public function getText_card_mob_5(): string
-    {
-        return $this->text_card_mob_5;
-    }
-
-    public function setText_card_mob_5(string $text_card_mob_5)
-    {
-        $this->text_card_mob_5 = $text_card_mob_5;
-    }
-
-
-    public function getTitle_card_room_1(): string
-    {
-        return $this->title_card_room_1;
-    }
-
-    public function setTitle_card_room_1(string $title_card_room_1)
-    {
-        $this->title_card_room_1 = $title_card_room_1;
-    }
-
-
-    public function getPicture_card_room_1(): string
-    {
-        return $this->picture_card_room_1;
-    }
-
-    public function setPicture_card_room_1(string $picture_card_room_1)
-    {
-        $this->picture_card_room_1 = $picture_card_room_1;
-    }
-
-
-    public function getTitle_card_room_2(): string
-    {
-        return $this->title_card_room_2;
-    }
-
-    public function setTitle_card_room_2(string $title_card_room_2)
-    {
-        $this->title_card_room_2 = $title_card_room_2;
-    }
-
-
-    public function getPicture_card_room_2(): string
-    {
-        return $this->picture_card_room_2;
-    }
-
-    public function setPicture_card_room_2(string $picture_card_room_2)
-    {
-        $this->picture_card_room_2 = $picture_card_room_2;
-    }
-
-
-    public function getTitle_card_room_3(): string
-    {
-        return $this->title_card_room_3;
-    }
-
-    public function setTitle_card_room_3(string $title_card_room_3)
-    {
-        $this->title_card_room_3 = $title_card_room_3;
-    }
-
-
-    public function getPicture_card_room_3(): string
-    {
-        return $this->picture_card_room_3;
-    }
-
-    public function setPicture_card_room_3(string $picture_card_room_3)
-    {
-        $this->picture_card_room_3 = $picture_card_room_3;
-    }
-
-
-    public function getTitle_card_room_4(): string
-    {
-        return $this->title_card_room_4;
-    }
-
-    public function setTitle_card_room_4(string $title_card_room_4)
-    {
-        $this->title_card_room_4 = $title_card_room_4;
-    }
-
-
-    public function getPicture_card_room_4(): string
-    {
-        return $this->picture_card_room_4;
-    }
-
-    public function setPicture_card_room_4(string $picture_card_room_4)
-    {
-        $this->picture_card_room_4 = $picture_card_room_4;
-    }
-
-
-    public function getTitle_card_room_boss(): string
-    {
-        return $this->title_card_room_boss;
-    }
-
-    public function setTitle_card_room_boss(string $title_card_room_boss)
-    {
-        $this->title_card_room_boss = $title_card_room_boss;
-    }
-
-
-    public function getPicture_card_room_boss(): string
-    {
-        return $this->picture_card_room_boss;
-    }
-
-    public function setPicture_card_room_boss(string $picture_card_room_boss)
-    {
-        $this->picture_card_room_boss = $picture_card_room_boss;
-    }
-
-
-    public function getPicture_card_boss(): string
-    {
-        return $this->picture_card_boss;
-    }
-
-    public function setPicture_card_boss(string $picture_card_boss)
-    {
-        $this->picture_card_boss = $picture_card_boss;
-    }
-
-
-    public function getText_card_boss(): string
-    {
-        return $this->text_card_boss;
-    }
-
-    public function setText_card_boss(string $text_card_boss)
-    {
-        $this->text_card_boss = $text_card_boss;
+        $this->description = $description;
     }
 
 
@@ -377,9 +110,6 @@ class Dungeon {
     }
 
 
-
-
-
     public static function get_all(): array
     {
         $pdo = Database::connect();
@@ -418,64 +148,16 @@ class Dungeon {
     public function insert(): bool
     {
         $pdo = Database::connect();
-        $sql = 'INSERT INTO `dungeons` (`main_title`, `picture_zone`, `picture_key`, `picture_pnj`, 
-        `picture_card_mob_1`, `text_card_mob_1`,
-        `picture_card_mob_2`, `text_card_mob_2`,
-        `picture_card_mob_3`, `text_card_mob_3`,
-        `picture_card_mob_4`, `text_card_mob_4`,
-        `picture_card_mob_5`, `text_card_mob_5`,
-        `title_card_room_1`, `picture_card_room_1`,
-        `title_card_room_2`, `picture_card_room_2`,
-        `title_card_room_3`, `picture_card_room_3`,
-        `title_card_room_4`, `picture_card_room_4`,
-        `title_card_room_boss`, `picture_card_room_boss`,
-        `picture_card_boss`, `text_card_boss`, `id_users`)
-        VALUES (:main_title, :picture_zone, :picture_key, :picture_pnj,
-        :picture_card_mob_1, :text_card_mob_1,
-        :picture_card_mob_2, :text_card_mob_2,
-        :picture_card_mob_3, :text_card_mob_3,
-        :picture_card_mob_4, :text_card_mob_4,
-        :picture_card_mob_5, :text_card_mob_5,
-        :title_card_room_1, :picture_card_room_1,
-        :title_card_room_2, :picture_card_room_2,
-        :title_card_room_3, :picture_card_room_3,
-        :title_card_room_4, :picture_card_room_4,
-        :title_card_room_boss, :picture_card_room_boss,
-        :picture_card_boss, :text_card_boss, :id_users);';
+        $sql = "INSERT INTO `dungeons` (`main_title`, `main_text`, `picture`, `description`, `id_users`)
+        VALUES (:main_title, :main_text, :picture, :description, :id_users);";
         //:type -> marqueur nominatif (à utilisé quand une valeur vient de l'extérieur)
         $sth = $pdo->prepare($sql);
         //prepare -> éxecute la requête et protège d'injection SQL
         //prepare / bindValue -> méthode appartenant à un PDOStatement
         $sth->bindValue(':main_title', $this->getMain_title());
-        $sth->bindValue(':picture_zone', $this->getPicture_zone());
-        $sth->bindValue(':picture_key', $this->getPicture_key());
-        $sth->bindValue(':picture_pnj', $this->getPicture_pnj());
-
-        $sth->bindValue(':picture_card_mob_1', $this->getPicture_card_mob_1());
-        $sth->bindValue(':text_card_mob_1', $this->getText_card_mob_1());
-        $sth->bindValue(':picture_card_mob_2', $this->getPicture_card_mob_2());
-        $sth->bindValue(':text_card_mob_2', $this->getText_card_mob_2());
-        $sth->bindValue(':picture_card_mob_3', $this->getPicture_card_mob_3());
-        $sth->bindValue(':text_card_mob_3', $this->getText_card_mob_3());
-        $sth->bindValue(':picture_card_mob_4', $this->getPicture_card_mob_4());
-        $sth->bindValue(':text_card_mob_4', $this->getText_card_mob_4());
-        $sth->bindValue(':picture_card_mob_5', $this->getPicture_card_mob_5());
-        $sth->bindValue(':text_card_mob_5', $this->getText_card_mob_5());
-
-        $sth->bindValue(':title_card_room_1', $this->getTitle_card_room_1());
-        $sth->bindValue(':picture_card_room_1', $this->getPicture_card_room_1());
-        $sth->bindValue(':title_card_room_2', $this->getTitle_card_room_2());
-        $sth->bindValue(':picture_card_room_2', $this->getPicture_card_room_2());
-        $sth->bindValue(':title_card_room_3', $this->getTitle_card_room_3());
-        $sth->bindValue(':picture_card_room_3', $this->getPicture_card_room_3());
-        $sth->bindValue(':title_card_room_4', $this->getTitle_card_room_4());
-        $sth->bindValue(':picture_card_room_4', $this->getPicture_card_room_4());
-
-        $sth->bindValue(':title_card_room_boss', $this->getTitle_card_room_boss());
-        $sth->bindValue(':picture_card_room_boss', $this->getPicture_card_room_boss());
-        $sth->bindValue(':picture_card_boss', $this->getPicture_card_boss());
-        $sth->bindValue(':text_card_boss', $this->getText_card_boss());
-
+        $sth->bindValue(':main_text', $this->getMain_text());
+        $sth->bindValue(':picture', $this->getPicture());
+        $sth->bindValue(':description', $this->getDescription());
         $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
         //bindValue -> affecter une valeur à un marqueur nominatif
         $result = $sth->execute();
@@ -489,66 +171,19 @@ class Dungeon {
     public function update(): bool
     {
         $pdo = Database::connect();
-        $sql = 'UPDATE `dungeons` SET `main_title` = :main_title,
-        `picture_zone` = :picture_zone,
-        `picture_key` = :picture_key,
-        `picture_pnj` = :picture_pnj,
-        `picture_card_mob_1` = :picture_card_mob_1,
-        `text_card_mob_1` = :text_card_mob_1,
-        `picture_card_mob_2` = :picture_card_mob_2,
-        `text_card_mob_2` = :text_card_mob_2,
-        `picture_card_mob_3` = :picture_card_mob_3,
-        `text_card_mob_3` = :text_card_mob_3,
-        `picture_card_mob_4` = :picture_card_mob_4,
-        `text_card_mob_4` = :text_card_mob_4,
-        `picture_card_mob_5` = :picture_card_mob_5,
-        `text_card_mob_5` = :text_card_mob_5,
-        `title_card_room_1` = :title_card_room_1,
-        `picture_card_room_1` = :picture_card_room_1,
-        `title_card_room_2` = :title_card_room_2,
-        `picture_card_room_2` = :picture_card_room_2,
-        `title_card_room_3` = :title_card_room_3,
-        `picture_card_room_3` = :picture_card_room_3,
-        `title_card_room_4` = :title_card_room_4,
-        `picture_card_room_4` = :picture_card_room_4,
-        `title_card_room_boss` = :title_card_room_boss,
-        `picture_card_room_boss` = :picture_card_room_boss,
-        `picture_card_boss` = :picture_card_boss,
-        `text_card_boss` = :text_card_boss,
+        $sql = "UPDATE `dungeons` SET `main_title` = :main_title,
+        `main_text` = :main_text,
+        `picture` = :picture,
+        `description` = :description,
         `id_users` = :id_users
-        WHERE `id_dungeons` = :id_dungeons';
+        WHERE `id_dungeons` = :id_dungeons";
         $sth = $pdo->prepare($sql);
         //prepare -> éxecute la requête et protège d'injection SQL
         //prepare / bindValue -> méthode appartenant à un PDOStatement
         $sth->bindValue(':main_title', $this->getMain_title());
-        $sth->bindValue(':picture_zone', $this->getPicture_zone());
-        $sth->bindValue(':picture_key', $this->getPicture_key());
-        $sth->bindValue(':picture_pnj', $this->getPicture_pnj());
-
-        $sth->bindValue(':picture_card_mob_1', $this->getPicture_card_mob_1());
-        $sth->bindValue(':text_card_mob_1', $this->getText_card_mob_1());
-        $sth->bindValue(':picture_card_mob_2', $this->getPicture_card_mob_2());
-        $sth->bindValue(':text_card_mob_2', $this->getText_card_mob_2());
-        $sth->bindValue(':picture_card_mob_3', $this->getPicture_card_mob_3());
-        $sth->bindValue(':text_card_mob_3', $this->getText_card_mob_3());
-        $sth->bindValue(':picture_card_mob_4', $this->getPicture_card_mob_4());
-        $sth->bindValue(':text_card_mob_4', $this->getText_card_mob_4());
-        $sth->bindValue(':picture_card_mob_5', $this->getPicture_card_mob_5());
-        $sth->bindValue(':text_card_mob_5', $this->getText_card_mob_5());
-
-        $sth->bindValue(':title_card_room_1', $this->getTitle_card_room_1());
-        $sth->bindValue(':picture_card_room_1', $this->getPicture_card_room_1());
-        $sth->bindValue(':title_card_room_2', $this->getTitle_card_room_2());
-        $sth->bindValue(':picture_card_room_2', $this->getPicture_card_room_2());
-        $sth->bindValue(':title_card_room_3', $this->getTitle_card_room_3());
-        $sth->bindValue(':picture_card_room_3', $this->getPicture_card_room_3());
-        $sth->bindValue(':title_card_room_4', $this->getTitle_card_room_4());
-        $sth->bindValue(':picture_card_room_4', $this->getPicture_card_room_4());
-
-        $sth->bindValue(':title_card_room_boss', $this->getTitle_card_room_boss());
-        $sth->bindValue(':picture_card_room_boss', $this->getPicture_card_room_boss());
-        $sth->bindValue(':picture_card_boss', $this->getPicture_card_boss());
-        $sth->bindValue(':text_card_boss', $this->getText_card_boss());
+        $sth->bindValue(':main_text', $this->getMain_text());
+        $sth->bindValue(':picture', $this->getPicture());
+        $sth->bindValue(':description', $this->getDescription());
         $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
         $sth->bindValue(':id_dungeons', $this->getId_dungeons(), PDO::PARAM_INT);
         //bindValue -> affecter une valeur à un marqueur nominatif, PDO::PARAM_STR par defaut
