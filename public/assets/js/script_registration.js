@@ -79,6 +79,8 @@ const validPassword = () => {
 
 }
 
+
+
 // écouteur d'évènements à l'appui de la touche du clavier
 pseudoElement.addEventListener('keyup', checkLastname);
 emailElement.addEventListener('keyup', checkEmail);
