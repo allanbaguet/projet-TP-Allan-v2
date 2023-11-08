@@ -4,12 +4,6 @@ let descriptDj = document.getElementById('descriptDj');
 let screenDj = document.getElementById('screenDj');
 let age = document.getElementById('age');
 
-// On cible les éléments Small du Dom
-// let titleDjSmall = document.getElementById('titleDjSmall');
-// let descriptDjSmall = document.getElementById('descriptDjSmall');
-// let screenDjSmall = document.getElementById('screenDjSmall');
-// let ageSmall = document.getElementById('ageSmall');
-
 // On cible le bouton cloneur
 let clonePreset = document.getElementById('clonePreset');
 
@@ -56,19 +50,6 @@ const cloneForm = () => {
 
 }
 
-// const submitForm = (event) => {
-//     event.preventDefault();
-//     let titlesDj = document.querySelectorAll('.titleDj');
-//     let descriptsDj = document.querySelectorAll('.descriptDj');
-//     let screensDj = document.querySelectorAll('.screenDj');
-
-//     nbItems = titlesDj.length;
-//     for (i = 0; i < nbItems; i++) {
-
-//         datas.innerHTML += `<div>${titlesDj[i].value}  ${descriptsDj[i].value} ${screensDj[i].value}">${screensDj[i].value}</div>`;
-//     }
-
-// }
 
 const removeClone = () => {
     // On vérifie si il y a des formulaires cloné à l'aide de leur id préalablement crée

@@ -174,8 +174,8 @@ class Dungeon {
         $sql = "UPDATE `dungeons` SET `main_title` = :main_title,
         `main_text` = :main_text,
         `picture` = :picture,
-        `description` = :description,
-        `id_users` = :id_users
+        `description` = :description
+        -- `id_users` = :id_users
         WHERE `id_dungeons` = :id_dungeons";
         $sth = $pdo->prepare($sql);
         //prepare -> éxecute la requête et protège d'injection SQL
@@ -184,7 +184,7 @@ class Dungeon {
         $sth->bindValue(':main_text', $this->getMain_text());
         $sth->bindValue(':picture', $this->getPicture());
         $sth->bindValue(':description', $this->getDescription());
-        $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
+        // $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
         $sth->bindValue(':id_dungeons', $this->getId_dungeons(), PDO::PARAM_INT);
         //bindValue -> affecter une valeur à un marqueur nominatif, PDO::PARAM_STR par defaut
         $sth->execute();
@@ -208,6 +208,56 @@ class Dungeon {
         $nbRows = $sth->rowCount();
         //rowCount retourne le nombre de colonne affecté par la dernière requête SQL
         return $nbRows > 0 ? true : false;
+    }
+
+    //définit le paramètre d'url par défaut à 0 -> affichage de toute les catégories
+    public static function get_all_dungeon($search = ''): array
+    {
+        // Offset 0 = page 1 / Offset 10 = page 2 / Offset 20 = page 3 ...
+        // $limit = NB_PER_PAGE;
+        // $offset = ($page - 1) * $limit;
+        $pdo = Database::connect();
+        $sql = "SELECT * FROM `dungeons`
+        INNER JOIN `users` ON `dungeons`.`id_users` = `users`.`id_users` WHERE `deleted_at` IS NULL;";
+
+        // Condition si différent de 0 -> entre dans la condition et concatène la requête SQL et
+        // sélectionne l'id_types de la table vehicles
+        // if ($id_types != 0) {
+        //     $sql .= " AND `vehicles`.`id_types` = :id_types";
+        // }
+
+        if (!empty($search)) {
+            $sql .= " AND (`dungeons`.`main_title` LIKE :search)";
+        }
+
+        // if ($countAll == false) {
+        //     $sql .= " LIMIT :limit OFFSET :offset";
+        // }
+
+        $sth = $pdo->prepare($sql);
+
+        // Condition comme ci-dessus, si différent de 0, bindValue de l'id_types car marqueur nominatif
+        // que si on rentre dans la condition ci-dessus
+        // if ($id_types != 0) {
+        //     $sth->bindValue(':id_types', $id_types, PDO::PARAM_INT);
+        // }
+
+        if (!empty($search)) {
+            $sth->bindValue(':search', '%' . $search . '%', PDO::PARAM_STR);
+        }
+
+        // if ($countAll == false) {
+        //     $sth->bindValue(':offset', $offset, PDO::PARAM_INT);
+        //     $sth->bindValue(':limit', NB_PER_PAGE, PDO::PARAM_INT);
+        // }
+
+        $sth->execute();
+
+        // La méthode execute retourne un booléen
+        $dungeonList = $sth->fetchAll(PDO::FETCH_OBJ);
+
+        // fetchAll récupère tous les enregistrements
+        return $dungeonList;
     }
 
 

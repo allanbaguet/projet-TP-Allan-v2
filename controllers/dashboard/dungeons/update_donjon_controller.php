@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../../../config/database.php';
 require_once __DIR__ . '/../../../config/regex.php';
 require_once __DIR__ . '/../../../models/Dungeon.php';
 require_once __DIR__ . '/../../../models/User.php';
@@ -6,7 +7,11 @@ require_once __DIR__ . '/../../../models/User.php';
 
 try {
     $errors = [];
-    $getUserList = User::get_all();
+    // $getUserList = User::get_all();
+    $id_dungeons = intval(filter_input(INPUT_GET, 'id_dungeons', FILTER_SANITIZE_NUMBER_INT));
+    //pour appelé la méthode static -> appel de la classe avec :: nom de la fonction
+    $dungeonObj = Dungeon::get($id_dungeons);
+    //variable qui appel la classe et sa méthode -> récupére l'id de l'utilisateur
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         //récupération et validation du titre du donjon
         $main_title = filter_input(INPUT_POST, 'main_title', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -39,7 +44,7 @@ try {
             }
         }
         //récupération et validation de l'ID du user
-        $id_users = intval(filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT));
+        // $id_users = intval(filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT));
         // if (!User::get($id_users)) {
         //     $errors['id_users'] = 'Catégorie inexistante';
         // }
@@ -76,15 +81,22 @@ try {
             $newDungeon = new Dungeon();
             //nouvel instance de l'objet issu de la classe Vehicle
             //on hydrate l'objet de toute les propriété
+            $newDungeon->setId_dungeons($id_dungeons);
             $newDungeon->setMain_title($main_title);
             $newDungeon->setMain_text($main_text);
             $newDungeon->setPicture($fileName);
             //ici on hydrate avec fileName -> car c'est le fichier généré
             $newDungeon->setDescription($description);
-            $newDungeon->setId_users($id_users);
+            // $newDungeon->setId_users($id_users);
             //on hydrate l'objet de toute les propriété
-            $saved = $newDungeon->insert();
+            $saved = $newDungeon->update();
             //$saved -> réponse de la méthode en question -> ici retourne un booléen
+        }
+        //$saved -> réponse de la méthode en question -> ici retourne un booléen
+        if ($saved == true) {
+            //permet la redirection à la liste des catégories à la modification
+            header('location: /controllers/dashboard/dungeons/donjons_dash_controller.php');
+            die;
         }
     }
 } catch (\Throwable $th) {
@@ -93,5 +105,5 @@ try {
 
 
 include __DIR__ . '/../../../views/dashboard/templates/header_dashboard.php';
-include __DIR__ . '/../../../views/dashboard/dungeons/preset_donjon.php';
+include __DIR__ . '/../../../views/dashboard/dungeons/update_donjon.php';
 include __DIR__ . '/../../../views/dashboard/templates/footer_dashboard.php';

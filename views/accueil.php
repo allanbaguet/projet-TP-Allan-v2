@@ -114,9 +114,9 @@
                         // Nettoyer la description en supprimant les balises HTML et les attributs de classe
                         $cleanedDescription = strip_tags($description);
 
-                        // Tronquer la description pour n'afficher qu'une phrase
+                        // Tronquer la description pour n'afficher que 2 phrases
                         $descriptionSentences = explode(".", $cleanedDescription);
-                        $truncatedDescription = implode(".", array_slice($descriptionSentences, 0, 1));
+                        $truncatedDescription = implode(".", array_slice($descriptionSentences, 0, 2));
 
                         $pubDate = date("d/m/Y", strtotime($item->pubDate));
             ?>
@@ -125,7 +125,7 @@
                                 <a href="<?= $link ?>" target="_blank">
                                     <img src="/public/assets/img/guide-img.jpg" class="card-img-top img-fluid desktop-img" alt="img-zaap-news">
                                 </a>
-                                <div class="card-body p-0" style="flex: 1;">
+                                <div class="card-body p-0">
                                     <h5 class="card-title p-3" id="title-card-white"><?= $title ?></h5>
                                     <p class="card-text p-3"><?= $truncatedDescription ?> ...</p>
                                 </div>

@@ -76,7 +76,7 @@ try {
             //on hydrate l'objet de toute les propriété
             $newUser->setUsername($username);
             $newUser->setMail($mail);
-            $newUser->setPassword($password);
+            $newUser->setPassword($hashedPassword);
             // $newUser->setId_users($id_users);
             //on hydrate l'objet de toute les propriété
             $saved = $newUser->insert();
