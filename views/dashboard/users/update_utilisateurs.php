@@ -20,7 +20,7 @@
                     <div class="mb-3 password-input">
                         <label for="password" class="form-label fs-5 my-3">Mot de passe *</label>
                         <div class="input-group">
-                            <input type="password" class="form-control" name="password" id="password" value="<?= $userObj->password ?>" pattern="<?= REGEX_PASSWORD ?>" placeholder="Entrez votre mot de passe" required>
+                            <input type="password" class="form-control" name="password" id="password" value="" pattern="<?= REGEX_PASSWORD ?>" placeholder="Entrez votre mot de passe" required>
                             <span class="input-group-text">
                                 <i class="bi bi-eye-fill toggle-password" id="togglePassword"></i>
                             </span>
@@ -30,7 +30,7 @@
                     <div class="mb-3">
                         <label for="password2" class="form-label fs-5 my-3">Confirmation du mot de passe *</label>
                         <div class="input-group">
-                            <input type="password" class="form-control" name="password2" id="password2" value="<?= $userObj->password ?>" pattern="<?= REGEX_PASSWORD ?>" placeholder="Entrez votre mot de passe à nouveau" required>
+                            <input type="password" class="form-control" name="password2" id="password2" value="" pattern="<?= REGEX_PASSWORD ?>" placeholder="Entrez votre mot de passe à nouveau" required>
                             <span class="input-group-text">
                                 <i class="bi bi-eye-fill toggle-password" id="togglePassword"></i>
                             </span>

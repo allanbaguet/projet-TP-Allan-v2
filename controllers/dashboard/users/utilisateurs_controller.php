@@ -7,6 +7,7 @@ try {
     $getUsersList = User::get_all();    
     //variable qui appel la classe et sa méthode -> récupére les éléments archivé
     $getUserArchived = User::get_archive();
+    // permet de filtrer les données en paramètre d'url 'archive', 'delete', 'unarchive'
     $archive= filter_input(INPUT_GET, 'archive', FILTER_SANITIZE_NUMBER_INT);
     $delete = filter_input(INPUT_GET, 'delete', FILTER_SANITIZE_NUMBER_INT);
     $unarchive = filter_input(INPUT_GET, 'unarchive', FILTER_SANITIZE_NUMBER_INT);

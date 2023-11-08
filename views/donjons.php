@@ -21,7 +21,7 @@
             <div class="col-10 mt-5 my-5">
                 <h2>Recherchez un donjon</h2>
                 <form action="" id="searchForm">
-                    <input type="search" name="search" id="search" class="input-home" placeholder="Rechercher...">
+                    <input type="search" name="search" id="search" class="input-home" value="<?= $search ?? '' ?>" placeholder="Rechercher...">
                     <button type="submit" class="btn-research">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -36,27 +36,31 @@
 
 
 <div class="container-fluid">
-
     <div class="row py-4">
-        <div class="col-lg-4 col-md-6 mb-4">
+        <?php
+        foreach ($getDungeonList as $dungeonList) { ?>
+            <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100" id="bg-color-body-card">
-                <h5 class="card-title p-3 text-center fs-4" id="title-card-white">Crypte de Kardorim</h5>
-                <a href="/controllers/donjons_controller.php">
-                    <img src="/public/assets/img/donjons/kardorim/kardorim.png" class="card-img-top img-fluid desktop-img" alt="donjons">
+                <h5 class="card-title p-3 text-center fs-4" id="title-card-white"><?=$dungeonList->main_title?></h5>
+                <a href="/controllers/page_donjon_controller.php?id_dungeons=<?=$dungeonList->id_dungeons?>">
+                    <img src="/public/assets/img/donjons/image-donjon.jpg" class="card-img-top img-fluid desktop-img" alt="donjons">
                 </a>
                 <div class="card-body p-0">
                     <p class="card-text p-3">Trouver ici le guide complet pour le donjon :
-                        <span class="fw-bold">Crypte de kardorim</span>
+                        <span class="fw-bold"><?=$dungeonList->main_title?></span>
                     </p>
                     <div class="d-flex justify-content-center card-footer p-2" id="bg-color-top-bottom-card">
-                        <a href="/controllers/donjons_controller.php" class="btn" id="button-green">C'est parti !</a>
+                        <a href="/controllers/page_donjon_controller.php?id_dungeons=<?=$dungeonList->id_dungeons?>" class="btn" id="button-green">C'est parti !</a>
                     </div>
                 </div>
             </div>
         </div>
+        <?php } ?>
+        </div>
+</div>
 
 
-        <div class="col-lg-4 col-md-6 mb-4">
+        <!-- <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100" id="bg-color-body-card">
                 <h5 class="card-title p-3 text-center fs-4" id="title-card-white">Grange du tournesol affamé</h5>
                 <a href="/controllers/guides_controller.php">
@@ -88,6 +92,4 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+        </div> -->
