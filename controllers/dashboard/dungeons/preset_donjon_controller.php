@@ -88,7 +88,11 @@ try {
         }
     }
 } catch (\Throwable $th) {
-    //throw $th;
+    $error = $th->getMessage();
+    include __DIR__ . '/../../../views/dashboard/templates/header_dashboard.php';
+    include __DIR__ . '/../../../views/templates/error.php';
+    include __DIR__ . '/../../../views/dashboard/templates/footer_dashboard.php';
+    die;
 }
 
 

@@ -1,18 +1,18 @@
 <?php
 require_once __DIR__ . '/../../../config/database.php';
 require_once __DIR__ . '/../../../config/regex.php';
-require_once __DIR__ . '/../../../models/Dungeon.php';
+require_once __DIR__ . '/../../../models/Guide.php';
 require_once __DIR__ . '/../../../models/User.php';
 
 
 try {
     $errors = [];
     // $getUserList = User::get_all();
-    $id_dungeons = intval(filter_input(INPUT_GET, 'id_dungeons', FILTER_SANITIZE_NUMBER_INT));
-    //permet ici de filtrer le paramètre d'url id_dungeons
-    $dungeonObj = Dungeon::get($id_dungeons);
+    $id_guides = intval(filter_input(INPUT_GET, 'id_guides', FILTER_SANITIZE_NUMBER_INT));
+    //permet ici de filtrer le paramètre d'url id_guides
+    $guideObj = Guide::get($id_guides);
     //pour appelé la méthode static -> appel de la classe avec :: nom de la fonction
-    //variable qui appel la classe et sa méthode -> récupére l'id du donjon
+    //variable qui appel la classe et sa méthode -> récupére l'id du guide
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         //récupération et validation du titre du donjon
         $main_title = filter_input(INPUT_POST, 'main_title', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -35,7 +35,6 @@ try {
                 $errors['main_text'] = 'Ce champs n\'est pas valide';
             }
         }
-
         //récupération et validation du descriptif du donjon
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
         if (empty($description)) {
@@ -53,54 +52,54 @@ try {
         //     $errors['id_users'] = 'Catégorie inexistante';
         // }
 
-        // //récupération et validation de l'image du donjon
+        // //récupération et validation de l'image du guide
         //$picture contient un tableau de 6 valeurs
         try {
-            $dungeonPicture = $_FILES['picture'];
-            if (empty($dungeonPicture)) {
+            $guidePicture = $_FILES['picture'];
+            if (empty($guidePicture)) {
                 throw new Exception("Veuillez renseigner un fichier", 1);
             }
-            if ($dungeonPicture['error'] != 0) {
+            if ($guidePicture['error'] != 0) {
                 throw new Exception("Fichier non envoyé", 2);
             }
-            if (!in_array($dungeonPicture['type'], AUTHORIZED_IMAGE_FORMAT)) {
+            if (!in_array($guidePicture['type'], AUTHORIZED_IMAGE_FORMAT)) {
                 throw new Exception("Mauvaise extension de fichier", 3);
             }
-            if ($dungeonPicture['size'] > FILE_SIZE) {
+            if ($guidePicture['size'] > FILE_SIZE) {
                 throw new Exception("Taille du fichier dépassé", 4);
             }
             //permet de recup l'extension -> $extension contient png
-            $extension = pathinfo($dungeonPicture['name'], PATHINFO_EXTENSION);
+            $extension = pathinfo($guidePicture['name'], PATHINFO_EXTENSION);
             //$fileName -> renomme le fichier, uniqid se base sur le timestamp donc id unique
             //et permet de récupérer le nom du fichier
             $fileName = uniqid('img_') . '.' . $extension;
             //$from contient le nom temporaire du fichier
-            $from = $dungeonPicture['tmp_name'];
-            $to = __DIR__ . '/../../../public/uploads/dungeons/' . $fileName;
+            $from = $guidePicture['tmp_name'];
+            $to = __DIR__ . '/../../../public/uploads/guides/' . $fileName;
             //déplace un fichier d'un endroit à un autre
             move_uploaded_file($from, $to);
         } catch (\Throwable $th) {
             $errors['picture'] = $th->getMessage();
         }
         if (empty($errors)) {
-            $newDungeon = new Dungeon();
+            $newGuide = new Guide();
             //nouvel instance de l'objet issu de la classe Vehicle
             //on hydrate l'objet de toute les propriété
-            $newDungeon->setId_dungeons($id_dungeons);
-            $newDungeon->setMain_title($main_title);
-            $newDungeon->setMain_text($main_text);
-            $newDungeon->setPicture($fileName);
+            $newGuide->setId_Guides($id_guides);
+            $newGuide->setMain_title($main_title);
+            $newGuide->setMain_text($main_text);
+            $newGuide->setPicture($fileName);
             //ici on hydrate avec fileName -> car c'est le fichier généré
-            $newDungeon->setDescription($description);
-            // $newDungeon->setId_users($id_users);
+            $newGuide->setDescription($description);
+            // $newGuide->setId_users($id_users);
             //on hydrate l'objet de toute les propriété
-            $saved = $newDungeon->update();
+            $saved = $newGuide->update();
             //$saved -> réponse de la méthode en question -> ici retourne un booléen
         }
         //$saved -> réponse de la méthode en question -> ici retourne un booléen
         if ($saved == true) {
             //permet la redirection à la liste des catégories à la modification
-            header('location: /controllers/dashboard/dungeons/donjons_dash_controller.php');
+            header('location: /controllers/dashboard/guides/guides_dash_controller.php');
             die;
         }
     }
@@ -114,5 +113,5 @@ try {
 
 
 include __DIR__ . '/../../../views/dashboard/templates/header_dashboard.php';
-include __DIR__ . '/../../../views/dashboard/dungeons/update_donjon.php';
+include __DIR__ . '/../../../views/dashboard/guides/update_guide.php';
 include __DIR__ . '/../../../views/dashboard/templates/footer_dashboard.php';

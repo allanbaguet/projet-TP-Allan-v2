@@ -254,8 +254,8 @@ class Guide
         $sql = 'UPDATE `guides` SET `main_title` = :main_title,
         `main_text` = :main_text,
         `picture` = :picture,
-        `description` = :description,
-        `id_users` = :id_users
+        `description` = :description
+        -- `id_users` = :id_users 
         WHERE `id_guides` = :id_guides';
         $sth = $pdo->prepare($sql);
         //prepare -> éxecute la requête et protège d'injection SQL
@@ -264,7 +264,7 @@ class Guide
         $sth->bindValue(':main_text', $this->getMain_text());
         $sth->bindValue(':picture', $this->getPicture());
         $sth->bindValue(':description', $this->getDescription());
-        $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
+        // $sth->bindValue(':id_users', $this->getId_users(), PDO::PARAM_INT);
         $sth->bindValue(':id_guides', $this->getId_guides(), PDO::PARAM_INT);
         //bindValue -> affecter une valeur à un marqueur nominatif, PDO::PARAM_STR par defaut
         $sth->execute();

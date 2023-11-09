@@ -7,8 +7,9 @@ try {
     $errors = [];
     //intval -> permet de nettoyer un entier
     $id_users = intval(filter_input(INPUT_GET, 'id_users', FILTER_SANITIZE_NUMBER_INT));
-    //pour appelé la méthode static -> appel de la classe avec :: nom de la fonction
+        //permet ici de filtrer le paramètre d'url id_users
     $userObj = User::get($id_users);
+    //pour appelé la méthode static -> appel de la classe avec :: nom de la fonction
     //variable qui appel la classe et sa méthode -> récupére l'id de l'utilisateur
 
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
@@ -101,7 +102,11 @@ try {
             }
     }
 } catch (\Throwable $th) {
-    //throw $th;
+    $error = $th->getMessage();
+    include __DIR__ . '/../../../views/dashboard/templates/header_dashboard.php';
+    include __DIR__ . '/../../../views/templates/error.php';
+    include __DIR__ . '/../../../views/dashboard/templates/footer_dashboard.php';
+    die;
 }
 
 
