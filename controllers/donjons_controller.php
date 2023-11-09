@@ -20,7 +20,11 @@ try {
     //ceil permet d'arrondir au supérieur
 
 } catch (\Throwable $th) {
-    //throw $th;
+    $error = $th->getMessage();
+    include __DIR__ . '/../views/templates/header.php';
+    include __DIR__ . '/../views/templates/error.php';
+    include __DIR__ . '/../views/templates/footer.php';
+    die;
 }
 
 

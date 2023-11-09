@@ -7,11 +7,11 @@
         <h1 class="text-center py-3">Liste des guides</h1>
         <div class="d-flex justify-content-around">
             <a class="link-underline link-underline-opacity-0" href="/controllers/dashboard/guides/preset_guide_1_controller.php">
-                <button type="button" class="btn mb-5" id="button-green">+ Guide preset 1</button>
+                <button type="button" class="btn mb-5" id="button-green">+ Nouveau guide</button>
             </a>
-            <a class="link-underline link-underline-opacity-0" href="/controllers/dashboard/guides/preset_guide_2_controller.php">
+            <!-- <a class="link-underline link-underline-opacity-0" href="/controllers/dashboard/guides/preset_guide_2_controller.php">
                 <button type="button" class="btn mb-5" id="button-green">+ Guide preset 2</button>
-            </a>
+            </a> -->
         </div>
         <div class="row my-5">
             <div class="col">
@@ -20,46 +20,31 @@
                         <tr class="text-center table-active">
                             <th scope="col">ID</th>
                             <th scope="col">Liste guide</th>
+                            <th scope="col">Date de création</th>
                             <th scope="col">Modification</th>
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                        <tr class="text-center">
-                            <th scope="row">1</th>
-                            <td>Guide des classes</td>
+                        <?php
+                        foreach ($getGuideList as $guideList) { ?>
+                            <tr class="text-center">
+                            <th scope="row"><?php echo $guideList->id_guides ?></th>
+                            <td><?php echo $guideList->main_title ?></td>
+                            <td><?php echo date('d-m-Y', strtotime($guideList->posted_at)) ?></td>
                             <td class="d-flex justify-content-evenly">
-                            <button class="btn btn-transparent">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <button class="btn btn-transparent">
-                                    <i class="bi bi-x-circle"></i>
-                                </button>
+                                <a href="/controllers/dashboard/guides/update_guide_controller.php?id_guides=<?= $guideList->id_guides ?>">
+                                    <button class="btn btn-transparent" title="Modifier l'élément">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                        </svg>
+                                    </button>
+                                </a>
+                                <!-- <button class="btn btn-transparent">
+                                        <i class="bi bi-x-circle"></i>
+                                    </button> -->
                             </td>
                         </tr>
-                        <tr class="text-center">
-                            <th scope="row">2</th>
-                            <td>Guide de kamas</td>
-                            <td class="d-flex justify-content-evenly">
-                                <button class="btn btn-transparent">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <button class="btn btn-transparent">
-                                    <i class="bi bi-x-circle"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <th scope="row">3</th>
-                            <td>Guide des métiers</td>
-                            <td class="d-flex justify-content-evenly">
-                            <button class="btn btn-transparent">
-                                    <i class="bi bi-pencil"></i>
-                                </button>
-                                <button class="btn btn-transparent">
-                                    <i class="bi bi-x-circle"></i>
-                                </button>
-                            </td>
-                        </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
