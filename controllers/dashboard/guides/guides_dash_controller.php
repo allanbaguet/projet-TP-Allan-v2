@@ -1,8 +1,10 @@
 <?php 
 require_once __DIR__ . '/../../../config/database.php';
 require_once __DIR__ . '/../../../models/Guide.php';
+require_once __DIR__ . '/../../../config/init.php';
 
 try {
+    $title = 'DofusUniverse - Dashboard guides';
     //pour appelé la méthode static -> appel de la classe avec :: nom de la fonction
     //méthode ici permettant de récupérer toute les colonne de la table guide des la BDD 
     $getGuideList = Guide::get_all();    

@@ -2,8 +2,11 @@
 require_once __DIR__ . '/../config/init.php';
 
 
-
-$title = 'DofusUniverse - Accueil';
+// session_start();
+session_destroy(); // Détruit la session
+header("Location: accueil_controller.php"); 
+die;
+// exit();
 
 
 include __DIR__ . '/../views/templates/header.php';

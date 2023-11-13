@@ -146,8 +146,8 @@ class User
     public function insert(): bool
     {
         $pdo = Database::connect();
-        $sql = "INSERT INTO `users` (`username`, `mail`, `password`)
-        VALUES (:username, :mail, :password);";
+        $sql = "INSERT INTO `users` (`username`, `mail`, `password`, `picture`)
+        VALUES (:username, :mail, :password, :picture);";
         //  : -> marqueur nominatif (à utilisé quand une valeur vient de l'extérieur)
         $sth = $pdo->prepare($sql);
         //prepare -> éxecute la requête et protège d'injection SQL
@@ -155,6 +155,7 @@ class User
         $sth->bindValue(':username', $this->getUsername());
         $sth->bindValue(':mail', $this->getMail());
         $sth->bindValue(':password', $this->getPassword());
+        $sth->bindValue(':picture', $this->getPicture());
         //bindValue -> affecter une valeur à un marqueur nominatif
         $result = $sth->execute();
         //$result -> se trouve la réponse de la méthode execute
@@ -256,5 +257,27 @@ class User
         //rowCount retourne le nombre de colonne affecté par la dernière requête SQL
         return $nbRows > 0 ? true : false;
     }
+
+    public static function authenticate(string $username, string $password): object
+    {
+    $pdo = Database::connect();
+    $sql = 'SELECT * FROM `users` WHERE `username` = :username AND `deleted_at` IS NULL';
+    $sth = $pdo->prepare($sql);
+    $sth->bindValue(':username', $username);
+    // $sth->bindValue(':password', $password);   
+    $sth->execute();
+    $result = $sth->fetch(PDO::FETCH_OBJ);
+    // return $result;
+    // Vérifiez si le mot de passe correspond
+    if ($result && password_verify($password, $result->password)) {
+        return $result; // Authentification réussie, retourne l'objet User
+    }
+
+    return null; // Authentification échouée, retourne null
+    }
+
+
+
+    
 
 }

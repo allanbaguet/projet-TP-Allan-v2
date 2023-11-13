@@ -1,10 +1,11 @@
 <?php 
-require_once __DIR__ . '/../../../config/database.php';
-require_once __DIR__ . '/../../../models/User.php';
-require_once __DIR__ . '/../../../config/regex.php';
-require_once __DIR__ . '/../../../config/init.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../config/regex.php';
+require_once __DIR__ . '/../config/init.php';
 
 try {
+    $title = "DofusUniverse - Modification utilisateur";
     $errors = [];
     //intval -> permet de nettoyer un entier
     $id_users = intval(filter_input(INPUT_GET, 'id_users', FILTER_SANITIZE_NUMBER_INT));
@@ -74,11 +75,11 @@ try {
                 $fileName = uniqid('img_') . '.' . $extension;
                 //$from contient le nom temporaire du fichier
                 $from = $userPicture['tmp_name'];
-                $to = __DIR__ . '/../../../public/uploads/users/' . $fileName;
+                $to = __DIR__ . '/../public/uploads/users/' . $fileName;
                 //déplace un fichier d'un endroit à un autre
                 move_uploaded_file($from, $to);
                 //@ permet de passer outre si il y a une erreur
-                @unlink(__DIR__ . '/../../../public/uploads/users/' . $userObj->picture);
+                @unlink(__DIR__ . '/../public/uploads/users/' . $userObj->picture);
             }
         } catch (\Throwable $th) {
             $errors['picture'] = $th->getMessage();
@@ -98,21 +99,21 @@ try {
             //$saved -> réponse de la méthode en question -> ici retourne un booléen
             if ($saved == true) {
                 //permet la redirection à la liste des catégories à la modification
-                header('location: /controllers/dashboard/users/utilisateurs_controller.php');
+                header('location: /controllers/user_profil_controller.php');
                 die;
             }
     }
 } catch (\Throwable $th) {
     $error = $th->getMessage();
-    include __DIR__ . '/../../../views/dashboard/templates/header_dashboard.php';
-    include __DIR__ . '/../../../views/templates/error.php';
-    include __DIR__ . '/../../../views/dashboard/templates/footer_dashboard.php';
+    include __DIR__ . '/../views/templates/header.php';
+    include __DIR__ . '/../views/templates/error.php';
+    include __DIR__ . '/../views/templates/footer.php';
     die;
 }
 
 
 
 
-include __DIR__ . '/../../../views/dashboard/templates/header_dashboard.php';
-include __DIR__ . '/../../../views/dashboard/users/update_utilisateurs.php';
-include __DIR__ . '/../../../views/dashboard/templates/footer_dashboard.php';
+include __DIR__ . '/../views/templates/header.php';
+include __DIR__ . '/../views/user_update_profil.php';
+include __DIR__ . '/../views/templates/footer.php';

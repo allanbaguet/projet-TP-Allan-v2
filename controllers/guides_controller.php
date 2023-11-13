@@ -1,10 +1,12 @@
 <?php 
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../models/Guide.php';
+require_once __DIR__ . '/../config/init.php';
 
 try {
     // $id_dungeons = intval(filter_input(INPUT_GET, 'id_dungeons', FILTER_SANITIZE_NUMBER_INT));
     // $getDungeonID = Dungeon::get($id_dungeon); 
+    $title = 'DofusUniverse - Guides';
     $getGuideList = Guide::get_all();
     // $page = intval(filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT));
     //définit une valeur par défaut (1) si $page est vide 

@@ -2,9 +2,11 @@
 require_once __DIR__ . '/../../../config/regex.php';
 require_once __DIR__ . '/../../../models/Guide.php';
 require_once __DIR__ . '/../../../models/User.php';
+require_once __DIR__ . '/../../../config/init.php';
 
 
 try {
+    $title = "DofusUniverse - Création guide";
     $errors = [];
     $getUserList = User::get_all();
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
@@ -39,7 +41,7 @@ try {
             }
         }
         //récupération et validation de l'ID du user
-        $id_users = intval(filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT));
+        // $id_users = intval(filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT));
         // if (!User::get($id_users)) {
         //     $errors['id_users'] = 'Catégorie inexistante';
         // }
@@ -81,7 +83,7 @@ try {
             $newGuide->setPicture($fileName);
             //ici on hydrate avec fileName -> car c'est le fichier généré
             $newGuide->setDescription($description);
-            // $newGuide->setId_users($id_users);
+            $newGuide->setId_users($id_users);
             //on hydrate l'objet de toute les propriété
             $saved = $newGuide->insert();
             //$saved -> réponse de la méthode en question -> ici retourne un booléen

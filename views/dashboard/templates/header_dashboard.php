@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/public/assets/css/style.css">
-    <title>DofusUniverse</title>
+    <title><?= $title ?></title>
 </head>
 
 <body>
@@ -24,6 +24,8 @@
                 </div>
                 <hr class="d-lg-none">
                 <div class="offcanvas-body d-flex justify-content-center">
+                    <?php
+                    if ($_SESSION['role'] == 2){ ?>
                     <ul class="navbar-nav fw-semibold" id="nav-offcanvas">
                         <li class="nav-item p-2 ">
                             <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/dashboard/dashboard_controller.php">Dashboard</a>
@@ -47,17 +49,26 @@
                             </button>
                         </li> -->
                     </ul>
+                    <?php } ?>
                 </div>
             </div>
             <div class="user d-flex">
-                <a class="navbar-brand" href="/controllers/connexion_controller.php">
-                    <button class="btn">
-                        <i class="bi bi-person-fill text-white px-3 custom-icon"></i>
+                    <ul class="navbar-nav fw-semibold" id="nav-offcanvas">
+                        <li class="nav-item p-2 px-2">
+                            <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/user_profil_controller.php?id_users=<?=$_SESSION['id_users']?>">Profil</a>
+                        </li>
+                        <li class="nav-item p-2 px-2">
+                            <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/deconnexion_controller.php">Déconnexion</a>
+                        </li>
+                    </ul>
+                    <a class="<?= ($_SESSION) == [] ? 'd-block' : 'd-none' ?> navbar-brand" href="/controllers/connexion_controller.php">
+                        <button class="btn">
+                            <i class="bi bi-person-fill text-white px-3 custom-icon"></i>
+                        </button>
+                    </a>
+                    <button class="navbar-toggler py-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <i class="bi bi-list text-white"></i>
                     </button>
-                </a>
-                <button class="navbar-toggler py-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <i class="bi bi-list text-white"></i>
-                </button>
             </div>
         </div>
     </nav>

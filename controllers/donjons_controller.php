@@ -1,10 +1,12 @@
 <?php 
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../models/Dungeon.php';
+require_once __DIR__ . '/../config/init.php';
 
 try {
     // $id_dungeons = intval(filter_input(INPUT_GET, 'id_dungeons', FILTER_SANITIZE_NUMBER_INT));
     // $getDungeonID = Dungeon::get($id_dungeon); 
+    $title = 'DofusUniverse - Donjons';
     $search = trim((string) filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS));
     $getDungeonList = Dungeon::get_all_dungeon(search: $search);
     // $page = intval(filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT));
