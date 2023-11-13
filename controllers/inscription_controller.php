@@ -1,10 +1,12 @@
 <?php
 require_once __DIR__ . '/../config/regex.php';
 require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../config/init.php';
 
 
 
 try {
+    $title = 'DofusUniverse - Inscription';
     $errors = [];
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         //récupération et validation du pseudo
@@ -45,31 +47,30 @@ try {
                 $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
             }
         }
-        // //récupération et validation de l'image de l'utilisateur
-        // try {
-        //     $userPicture = $_FILES['picture'];
-        //     if ($userPicture['error'] != 0) {
-        //         throw new Exception("Fichier non envoyé", 2);
-        //     }
-        //     if (!in_array($userPicture['type'], AUTHORIZED_IMAGE_FORMAT)) {
-        //         throw new Exception("Mauvaise extension de fichier", 3);
-        //     }
-        //     if ($userPicture['size'] > FILE_SIZE) {
-        //         throw new Exception("Taille du fichier dépassé", 4);
-        //     }
-        //     //permet de recup l'extension -> $extension contient png
-        //     $extension = pathinfo($userPicture['name'], PATHINFO_EXTENSION);
-        //     //$fileName -> renomme le fichier, uniqid se base sur le timestamp donc id unique
-        //     //et permet de récupérer le nom du fichier
-        //     $fileName = uniqid('img_') . '.' . $extension;
-        //     //$from contient le nom temporaire du fichier
-        //     $from = $userPicture['tmp_name'];
-        //     $to = __DIR__ . '/../../../public/uploads/users/' . $fileName;
-        //     //déplace un fichier d'un endroit à un autre
-        //     move_uploaded_file($from, $to);
-        // } catch (\Throwable $th) {
-        //     $errors['picture'] = $th->getMessage();
-        // }
+        try {
+            $userPicture = $_FILES['picture'];
+            if ($userPicture['error'] != 0) {
+                throw new Exception("Fichier non envoyé", 2);
+            }
+            if (!in_array($userPicture['type'], AUTHORIZED_IMAGE_FORMAT)) {
+                throw new Exception("Mauvaise extension de fichier", 3);
+            }
+            if ($userPicture['size'] > FILE_SIZE) {
+                throw new Exception("Taille du fichier dépassé", 4);
+            }
+            //permet de recup l'extension -> $extension contient png
+            $extension = pathinfo($userPicture['name'], PATHINFO_EXTENSION);
+            //$fileName -> renomme le fichier, uniqid se base sur le timestamp donc id unique
+            //et permet de récupérer le nom du fichier
+            $fileName = uniqid('img_') . '.' . $extension;
+            //$from contient le nom temporaire du fichier
+            $from = $userPicture['tmp_name'];
+            $to = __DIR__ . '/../public/uploads/users/' . $fileName;
+            //déplace un fichier d'un endroit à un autre
+            move_uploaded_file($from, $to);
+        } catch (\Throwable $th) {
+            $errors['picture'] = $th->getMessage();
+        }
         if (empty($errors)) {
             $newUser = new User();
             //nouvel instance de l'objet issu de la classe Vehicle
@@ -77,10 +78,13 @@ try {
             $newUser->setUsername($username);
             $newUser->setMail($mail);
             $newUser->setPassword($hashedPassword);
+            $newUser->setPicture($fileName);
             // $newUser->setId_users($id_users);
             //on hydrate l'objet de toute les propriété
             $saved = $newUser->insert();
             //$saved -> réponse de la méthode en question -> ici retourne un booléen
+
+            header("location: connexion_controller.php");
         }
     }
 } catch (\Throwable $th) {

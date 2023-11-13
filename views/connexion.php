@@ -5,9 +5,9 @@
             <form id="connexionForm" action="" method="POST">
                 <fieldset>
                     <div class="mb-3">
-                        <label for="pseudo" class="form-label fs-5 my-3">Pseudo</label>
-                        <input type="text" class="form-control" id="pseudo" name="pseudo" aria-describedby="pseudoHelp">
-                        <div id="pseudoHelp" class="form-text"></div>
+                        <label for="username" class="form-label fs-5 my-3">Pseudo</label>
+                        <input type="text" class="form-control" id="username" name="username" aria-describedby="pseudoHelp">
+                        <div id="usernameHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label fs-5 my-3">Mot de passe</label>

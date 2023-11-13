@@ -7,7 +7,7 @@
             </div>
         </div>
     </header>
-
+   
     <div class="container-fluid">
         <h2>Différents contenus du site</h2>
         <div class="row py-4">
@@ -41,20 +41,39 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100" id="bg-color-body-card">
-                    <a href="/controllers/encyclopedie_controller.php">
-                        <img src="/public/assets/img/encyclopedie-img.jpg" class="card-img-top img-fluid desktop-img" alt="encyclopedie-de-dofus">
-                    </a>
-                    <div class="card-body p-0">
-                        <h5 class="card-title p-3" id="title-card-white">Encyclopédie</h5>
-                        <p class="card-text p-3">Trouver ici divers guide du jeu</p>
-                        <div class="d-flex justify-content-center card-footer p-2" id="bg-color-top-bottom-card">
-                            <a href="/controllers/encyclopedie_controller.php" class="btn" id="button-green">Histoire Dofus</a>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 <?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?>" id="bg-color-body-card">
+                            <a href="/controllers/encyclopedie_controller.php">
+                                <img src="/public/assets/img/encyclopedie-img.jpg" class="card-img-top img-fluid desktop-img" alt="encyclopedie-de-dofus">
+                            </a>
+                            <div class="card-body p-0">
+                                <h5 class="card-title p-3" id="title-card-white">Encyclopédie</h5>
+                                <p class="card-text p-3">Trouver ici divers guide du jeu</p>
+                                <div class="d-flex justify-content-center card-footer p-2" id="bg-color-top-bottom-card">
+                                    <a href="/controllers/encyclopedie_controller.php" class="btn" id="button-green">Histoire Dofus</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+
+            <!-- partie encyclopédie -> seulement visible par utilisateur/admin donc role 1/2 -->
+            <!-- <?php
+                if($role == 1 || 2) { ?>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100" id="bg-color-body-card">
+                            <a href="/controllers/encyclopedie_controller.php">
+                                <img src="/public/assets/img/encyclopedie-img.jpg" class="card-img-top img-fluid desktop-img" alt="encyclopedie-de-dofus">
+                            </a>
+                            <div class="card-body p-0">
+                                <h5 class="card-title p-3" id="title-card-white">Encyclopédie</h5>
+                                <p class="card-text p-3">Trouver ici divers guide du jeu</p>
+                                <div class="d-flex justify-content-center card-footer p-2" id="bg-color-top-bottom-card">
+                                    <a href="/controllers/encyclopedie_controller.php" class="btn" id="button-green">Histoire Dofus</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?> -->
         </div>
     </div>
 
@@ -116,7 +135,7 @@
 
                         // Tronquer la description pour n'afficher que 2 phrases
                         $descriptionSentences = explode(".", $cleanedDescription);
-                        $truncatedDescription = implode(".", array_slice($descriptionSentences, 0, 2));
+                        $truncatedDescription = implode(".", array_slice($descriptionSentences, 1, 2));
 
                         $pubDate = date("d/m/Y", strtotime($item->pubDate));
             ?>

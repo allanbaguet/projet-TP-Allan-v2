@@ -2,11 +2,14 @@
 require_once __DIR__ . '/../../../config/regex.php';
 require_once __DIR__ . '/../../../models/Dungeon.php';
 require_once __DIR__ . '/../../../models/User.php';
+require_once __DIR__ . '/../../../config/init.php';
 
 
 try {
+    $title = "DofusUniverse - Création page donjon";
     $errors = [];
     $getUserList = User::get_all();
+    
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         //récupération et validation du titre du donjon
         $main_title = filter_input(INPUT_POST, 'main_title', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -39,7 +42,7 @@ try {
             }
         }
         //récupération et validation de l'ID du user
-        $id_users = intval(filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT));
+        // $id_users = intval(filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT));
         // if (!User::get($id_users)) {
         //     $errors['id_users'] = 'Catégorie inexistante';
         // }

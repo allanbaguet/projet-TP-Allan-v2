@@ -3,6 +3,7 @@ require_once __DIR__ . '/../../../config/database.php';
 require_once __DIR__ . '/../../../config/regex.php';
 require_once __DIR__ . '/../../../models/Guide.php';
 require_once __DIR__ . '/../../../models/User.php';
+require_once __DIR__ . '/../../../config/init.php';
 
 
 try {

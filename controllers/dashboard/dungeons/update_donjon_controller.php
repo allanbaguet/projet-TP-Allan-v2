@@ -3,6 +3,7 @@ require_once __DIR__ . '/../../../config/database.php';
 require_once __DIR__ . '/../../../config/regex.php';
 require_once __DIR__ . '/../../../models/Dungeon.php';
 require_once __DIR__ . '/../../../models/User.php';
+require_once __DIR__ . '/../../../config/init.php';
 
 
 try {
@@ -10,6 +11,7 @@ try {
     // $getUserList = User::get_all();
     $id_dungeons = intval(filter_input(INPUT_GET, 'id_dungeons', FILTER_SANITIZE_NUMBER_INT));
     //permet ici de filtrer le paramètre d'url id_dungeons
+    $title = "DofusUniverse - Modification page donjon";
     $dungeonObj = Dungeon::get($id_dungeons);
     //pour appelé la méthode static -> appel de la classe avec :: nom de la fonction
     //variable qui appel la classe et sa méthode -> récupére l'id du donjon
@@ -92,7 +94,7 @@ try {
             $newDungeon->setPicture($fileName);
             //ici on hydrate avec fileName -> car c'est le fichier généré
             $newDungeon->setDescription($description);
-            // $newDungeon->setId_users($id_users);
+            $newDungeon->setId_users($id_users);
             //on hydrate l'objet de toute les propriété
             $saved = $newDungeon->update();
             //$saved -> réponse de la méthode en question -> ici retourne un booléen
