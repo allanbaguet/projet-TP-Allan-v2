@@ -4,7 +4,7 @@ require_once __DIR__ . '/../config/init.php';
 
 // session_start();
 session_destroy(); // Détruit la session
-header("Location: accueil_controller.php"); 
+header("Location: /accueil"); 
 die;
 // exit();
 

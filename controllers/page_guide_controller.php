@@ -6,7 +6,7 @@ require_once __DIR__ . '/../models/Guide.php';
 
 try {
     if ($_SESSION['role'] != 1 && $_SESSION['role'] != 2) {
-        header('location: /controllers/accueil_controller.php');
+        header('location: /accueil');
         die;
     }
     $title = 'DofusUniverse - Guide';

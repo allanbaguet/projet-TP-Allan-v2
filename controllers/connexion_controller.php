@@ -51,7 +51,7 @@ try {
             // $_SESSION['status'] = $message;
             
 
-            header("location: accueil_controller.php");
+            header("location: /accueil");
             die;
         } else {
             $errors['signIn'] = 'Nom d\'utilisateur ou mot de passe incorrect';

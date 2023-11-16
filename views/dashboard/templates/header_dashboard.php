@@ -14,16 +14,16 @@
 <body>
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/controllers/accueil_controller.php">
+            <a class="navbar-brand" href="/accueil">
                 <img src="/public/assets/img/panoplies/aventurier/chapeau.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             </a>
             <div class="offcanvas offcanvas-end text-bg-dark w-75" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <!-- affiche l'image de l'user dans l'offcanvas ainsi que son pseudo -->
                     <?php if (!empty($_SESSION)) : ?>
-                        <a href="/controllers/user_profil_controller.php">
+                        <a href="/profil/(\d+)">
                             <img class="rounded" src="/public/uploads/users/<?= $getInfoUser->picture ?>" alt="image user" width="55" height="55">
-                            <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar fw-bold" href="/controllers/user_profil_controller.php"><?= $_SESSION['username'] ?></a>
+                            <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar fw-bold" href="/profil"><?= $_SESSION['username'] ?></a>
                         </a>
                     <?php endif; ?>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -50,21 +50,21 @@
                             </li>
                             <hr class="my-2 d-lg-none">
                             <li class="nav-item p-2 d-flex justify-content-center align-items-center">
-                                <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/accueil_controller.php">Retour au site</a>
+                                <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/accueil">Retour au site</a>
                             </li>
                             <li class="nav-item d-flex justify-content-center align-items-center">
                             <?php if (!empty($_SESSION)) : ?>
                                 <div class="d-flex align-items-center justify-content-center">
-                                    <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/user_profil_controller.php">
+                                    <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/profil">
                                         <img class="img-profil-header rounded" src="/public/uploads/users/<?= $getInfoUser->picture ?>" alt="">
                                     </a>
-                                    <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/user_profil_controller.php"><?= $_SESSION['username'] ?></a>
+                                    <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/profil"><?= $_SESSION['username'] ?></a>
                                 </div>
                             <?php endif; ?>                            </li>
                             <li class="nav-item p-2 px-2 d-flex justify-content-center align-items-center">
                                 <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/deconnexion_controller.php">Déconnexion</a>
                             </li>
-                            <a class="<?= ($_SESSION) == [] ? 'd-block' : 'd-none' ?> navbar-brand" href="/controllers/connexion_controller.php">
+                            <a class="<?= ($_SESSION) == [] ? 'd-block' : 'd-none' ?> navbar-brand" href="/connexion">
                                 <button class="btn">
                                     <i class="bi bi-person-fill text-white px-3 custom-icon"></i>
                                 </button>

@@ -22,7 +22,7 @@
                             <p>Inscrit le : <span class="fw-bold"><?= date('d-m-Y', strtotime($getInfoUser->added_at)) ?></span></p>
                             <p class="card-text">Vous pouvez modifier vos informations ci-dessous</p>
                             <div class="d-flex flex-column">
-                                <a href="/controllers/user_update_profil_controller.php?id_users=<?= $_SESSION["id_users"] ?>" class="btn mb-2" id="button-green">Modifier vos informations</a>
+                                <a href="/profil-mis-à-jour?id_users=<?= $_SESSION["id_users"] ?>" class="btn mb-2" id="button-green">Modifier vos informations</a>
                                 <?php
                                 if ($_SESSION['role'] == 2) { ?>
                                     <a href="/controllers/dashboard/dashboard_controller.php" class="btn" id="button-green">Accès au dashboard</a>

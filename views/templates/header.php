@@ -19,16 +19,16 @@
 <body>
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/controllers/accueil_controller.php">
+            <a class="navbar-brand" href="/accueil">
                 <img src="/public/assets/img/panoplies/aventurier/chapeau.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             </a>
             <div class="offcanvas offcanvas-end text-bg-dark w-75" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <!-- affiche l'image de l'user dans l'offcanvas ainsi que son pseudo -->
                     <?php if (!empty($_SESSION)) : ?>
-                        <a href="/controllers/user_profil_controller.php">
+                        <a href="/profil">
                             <img class="rounded" src="/public/uploads/users/<?= $getInfoUser->picture ?>" alt="image user" width="55" height="55">
-                            <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar fw-bold" href="/controllers/user_profil_controller.php"><?= $_SESSION['username'] ?></a>
+                            <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar fw-bold" href="/profil"><?= $_SESSION['username'] ?></a>
                         </a>
                     <?php endif; ?>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -37,16 +37,16 @@
                 <div class="offcanvas-body d-flex justify-content-center">
                     <ul class="navbar-nav fw-semibold " id="nav-offcanvas">
                         <li class="nav-item p-2 px-2 d-flex justify-content-center align-items-center">
-                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/studio_ankama_controller.php">Histoire d'Ankama</a>
+                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/studio-ankama">Histoire d'Ankama</a>
                         </li>
                         <li class="nav-item p-2 px-2 d-flex justify-content-center align-items-center">
-                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/histoire_dofus_controller.php">Histoire de Dofus</a>
+                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/histoire-dofus">Histoire de Dofus</a>
                         </li>
                         <li class="nav-item p-2 px-2 d-flex justify-content-center align-items-center">
-                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/lexique_controller.php">Lexique</a>
+                            <a class="nav-link text-white text-center text-uppercase txtNavbar" href="/lexique">Lexique</a>
                         </li>
                         <li class="nav-item p-2 px-2 d-flex justify-content-center align-items-center">
-                            <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/encyclopedie_controller.php">Encyclopédie</a>
+                            <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/encyclopédie">Encyclopédie</a>
                             <!-- <ul class="dropdown-menu" id="encyclopedie-dropdown">
                                 <li>
                                     <a class="dropdown-item" href="/controllers/page1_controller.php">Donjons</a>
@@ -66,10 +66,10 @@
                             <!-- ici si un user est connecté $_SESSION n'est pas vide donc affiche -->
                             <?php if (!empty($_SESSION)) : ?>
                                 <div class="d-flex align-items-center justify-content-center">
-                                    <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/user_profil_controller.php">
+                                    <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/profil">
                                         <img class="img-profil-header rounded" src="/public/uploads/users/<?= $getInfoUser->picture ?>" alt="">
                                     </a>
-                                    <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/user_profil_controller.php"><?= $_SESSION['username'] ?></a>
+                                    <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/profil"><?= $_SESSION['username'] ?></a>
                                 </div>
                             <?php endif; ?>
                         </li>
@@ -78,7 +78,7 @@
                                 <a class="<?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?> nav-link text-white text-center text-uppercase txtNavbar" href="/controllers/deconnexion_controller.php">Déconnexion</a>
                             </div>
                         </li>
-                        <a class="navbar-brand <?= ($_SESSION) == [] ? 'd-block' : 'd-none' ?>" href="/controllers/connexion_controller.php">
+                        <a class="navbar-brand <?= ($_SESSION) == [] ? 'd-block' : 'd-none' ?>" href="/connexion">
                             <button class="btn">
                                 <i class="bi bi-person-fill text-white px-3 custom-icon"></i>
                             </button>

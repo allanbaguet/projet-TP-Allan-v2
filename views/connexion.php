@@ -37,7 +37,7 @@
                 <p id="textRegister" class="d-flex text-center p-2 fs-5">Tu n’as pas encore de compte ?
                     Inscris-toi pour profiter de toutes les fonctionnalités du site !</p>
                 <div class="d-flex justify-content-center">
-                    <a href="/controllers/inscription_controller.php">
+                    <a href="/inscription">
                         <button id="connectAccount" class="btn">Créer un compte</button>
                     </a>
                 </div>

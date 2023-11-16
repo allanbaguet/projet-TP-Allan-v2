@@ -40,7 +40,7 @@
                         <!-- <p class="text-center" id="title-card-white"><?= $dungeonCommentarie->username ?></p> -->
                     </div>
                     <div class="comment-text col-sm-10 col-md-8 ml-3 pt-2 pb-2 ">
-                        <a class="link-underline link-underline-opacity-0" href="/controllers/user_check_profil_controller.php?id_users=<?= $dungeonCommentarie->id_users ?>">
+                        <a class="link-underline link-underline-opacity-0" href="/profil-membre?id_users=<?= $dungeonCommentarie->id_users ?>">
                             <p class="text-center fs-5" id="title-comm-green"><?= $dungeonCommentarie->username ?> - <span id="date-comm"><?= date('d-m-Y', strtotime($dungeonCommentarie->confirmed_at)) ?></span></p>
                         </a>
                         <p><?= $dungeonCommentarie->text ?></p>
