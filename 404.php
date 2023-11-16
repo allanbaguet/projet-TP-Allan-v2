@@ -18,7 +18,7 @@
                 <div class="col bloc-404">
                     <h1>Erreur 404 - Page non trouvée</h1>
                     <p class="fs-5">Désolé, la page que vous recherchez n'existe pas.</p>
-                    <a href="/controllers/accueil_controller.php">
+                    <a href="/accueil">
                         <button type="button" class="btn" id="button-green">Retour vers le site</button>
                     </a>
                 </div>

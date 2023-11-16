@@ -104,7 +104,7 @@ try {
             // Vérification si l'insertion est réussie
             if ($saved) {
                 // FlashMessage::set("Votre inscription a été un succès", SUCCESS);
-                header("location: connexion_controller.php");
+                header("location: /connexion");
                 die;
             } else {
                 $errors['insertion'] = 'Une erreur s\'est produite.';

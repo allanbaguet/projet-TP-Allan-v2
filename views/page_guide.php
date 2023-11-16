@@ -40,7 +40,7 @@
                         <!-- <p class="text-center" id="title-card-white"><?= $guideCommentarie->username ?></p> -->
                     </div>
                     <div class="comment-text col-sm-10 col-md-8 ml-3 pt-2 pb-2 ">
-                        <a class="link-underline link-underline-opacity-0" href="/controllers/user_check_profil_controller.php?id_users=<?= $guideCommentarie->id_users ?>">
+                        <a class="link-underline link-underline-opacity-0" href="/profil?id_users=<?= $guideCommentarie->id_users ?>">
                             <p class="text-center fs-5" id="title-comm-green"><?= $guideCommentarie->username ?> - <span id="date-comm"><?= date('d-m-Y', strtotime($guideCommentarie->confirmed_at)) ?></span></p>
                         </a>
                         <p><?= $guideCommentarie->text ?></p>

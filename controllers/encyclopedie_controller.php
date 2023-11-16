@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../config/init.php';
 
 if ($_SESSION['role'] != 1 && $_SESSION['role'] != 2) {
-    header('location: /controllers/accueil_controller.php');
+    header('location: /accueil');
     die;
 }
 

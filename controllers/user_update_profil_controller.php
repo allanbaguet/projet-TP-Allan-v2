@@ -99,7 +99,7 @@ try {
             //$saved -> réponse de la méthode en question -> ici retourne un booléen
             if ($saved == true) {
                 //permet la redirection à la liste des catégories à la modification
-                header('location: /controllers/user_profil_controller.php');
+                header('location: /profil');
                 die;
             }
     }

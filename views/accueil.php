@@ -15,14 +15,14 @@
         <div class="row py-4">
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100" id="bg-color-body-card">
-                    <a href="/controllers/studio_ankama_controller.php">
+                    <a href="/studio-ankama">
                         <img src="/public/assets/img/studio_ankama.jpg" class="card-img-top img-fluid desktop-img" alt="studio-Ankama">
                     </a>
                     <div class="card-body p-0">
                         <h5 class="card-title p-3" id="title-card-white">L'histoire du studio Ankama</h5>
                         <p class="card-text p-3">Trouver ici l’histoire du studio d’Ankama</p>
                         <div class="d-flex justify-content-center card-footer p-2" id="bg-color-top-bottom-card">
-                            <a href="/controllers/studio_ankama_controller.php" class="btn" id="button-green">Histoire d'Ankama</a>
+                            <a href="/studio-ankama" class="btn" id="button-green">Histoire d'Ankama</a>
                         </div>
                     </div>
                 </div>
@@ -30,14 +30,14 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100" id="bg-color-body-card">
-                    <a href="/controllers/histoire_dofus_controller.php">
+                    <a href="/histoire-dofus">
                         <img src="/public/assets/img/dofus.jpg" class="card-img-top img-fluid desktop-img" alt="histoire-de-dofus">
                     </a>
                     <div class="card-body p-0">
                         <h5 class="card-title p-3" id="title-card-white">L'histoire de Dofus</h5>
                         <p class="card-text p-3">Trouver ici l’histoire du jeu vidéo Dofus</p>
                         <div class="d-flex justify-content-center card-footer p-2" id="bg-color-top-bottom-card">
-                            <a href="/controllers/histoire_dofus_controller.php" class="btn" id="button-green">Histoire Dofus</a>
+                            <a href="/histoire-dofus" class="btn" id="button-green">Histoire Dofus</a>
                         </div>
                     </div>
                 </div>
@@ -45,14 +45,14 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100 <?= ($_SESSION) == [] ? 'd-none' : 'd-block' ?>" id="bg-color-body-card">
-                    <a href="/controllers/encyclopedie_controller.php">
+                    <a href="/encyclopédie">
                         <img src="/public/assets/img/encyclopedie-img.jpg" class="card-img-top img-fluid desktop-img" alt="encyclopedie-de-dofus">
                     </a>
                     <div class="card-body p-0">
                         <h5 class="card-title p-3" id="title-card-white">Encyclopédie</h5>
                         <p class="card-text p-3">Trouver ici divers guide du jeu</p>
                         <div class="d-flex justify-content-center card-footer p-2" id="bg-color-top-bottom-card">
-                            <a href="/controllers/encyclopedie_controller.php" class="btn" id="button-green">Histoire Dofus</a>
+                            <a href="/encyclopédie" class="btn" id="button-green">Histoire Dofus</a>
                         </div>
                     </div>
                 </div>

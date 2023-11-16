@@ -1,1 +1,45 @@
 ErrorDocument 404 /404.php
+
+
+RewriteEngine On
+
+# Définit une condition qui devra être satisfaite pour que la réécriture soit effectuée
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Réécriture d'URL pour l'accueil -> utilisation de /accueil qui redirige au controller en question
+RewriteRule ^accueil$ /controllers/accueil_controller.php [L]
+
+# Réécriture d'URL pour l'inscription
+RewriteRule ^inscription$ /controllers/inscription_controller.php [L]
+
+# Réécriture d'URL pour la connexion
+RewriteRule ^connexion$ /controllers/connexion_controller.php [L]
+
+# Réécriture d'URL pour le lexique
+RewriteRule ^lexique$ /controllers/lexique_controller.php [L]
+
+# Réécriture d'URL pour l'histoire dofus
+RewriteRule ^histoire-dofus$ /controllers/histoire_dofus_controller.php [L]
+
+# Réécriture d'URL pour l'histoire studio ankama
+RewriteRule ^studio-ankama$ /controllers/studio_ankama_controller.php [L]
+
+# Réécriture d'URL pour la page encyclopédie
+RewriteRule ^encyclopédie$ /controllers/encyclopedie_controller.php [L]
+
+# Réécriture d'URL pour la page donjon
+RewriteRule ^donjon$ /controllers/page_donjon_controller.php [L]
+
+# Réécriture d'URL pour la page guide
+RewriteRule ^guide$ /controllers/page_guide_controller.php [L]
+
+# Réécriture d'URL pour la page profil
+RewriteRule ^profil$ /controllers/user_profil_controller.php [L]
+
+# Réécriture d'URL pour la page profil d'un utilisateur
+RewriteRule ^profil-membre$ /controllers/user_check_profil_controller.php [L]
+
+# Réécriture d'URL pour la page màj du profil
+RewriteRule ^profil-mis-à-jour$ /controllers/user_update_profil_controller.php [L]
+

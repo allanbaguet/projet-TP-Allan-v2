@@ -9,7 +9,7 @@ require_once __DIR__ . '/../../../config/init.php';
 try {
     //condition permettant de refusé l'accès à un utilisateur si il n'est pas admin en le renvoyant à l'accueil
     if ($_SESSION['role'] != 2) {
-        header('location: /controllers/accueil_controller.php');
+        header('location: /accueil');
         die;
     }
     $errors = [];
