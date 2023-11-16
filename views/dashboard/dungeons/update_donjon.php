@@ -13,7 +13,7 @@
                 <div class="mb-3 row">
                     <label for="main_title" class="col-sm-4 col-form-label fw-semibold fs-5">Titre principal</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control titleDj" id="main_title" name="main_title" value="<?=$dungeonObj->main_title?>">
+                        <input type="text" class="form-control titleDj" id="main_title" name="main_title" value="<?= $dungeonObj->main_title ?>">
                         <div id="main_titleHelp" class="form-text error d-none text-danger">Le champ n'est pas valide</div>
                         <p class="error"> <?= $errors['main_title'] ?? '' ?> </p>
                     </div>
@@ -26,7 +26,7 @@
                 <div class="mb-3 row">
                     <label for="main_text" class="col-sm-4 col-form-label fw-semibold fs-5">Texte principal</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control titleDj" id="main_text" name="main_text" value="<?=$dungeonObj->main_text?>">
+                        <input type="text" class="form-control titleDj" id="main_text" name="main_text" value="<?= $dungeonObj->main_text ?>">
                         <div id="main_textHelp" class="form-text error d-none text-danger">Le champ n'est pas valide</div>
                         <p class="error"> <?= $errors['main_text'] ?? '' ?> </p>
                     </div>
@@ -47,7 +47,7 @@
                 <div class="mb-3 row my-5">
                     <label for="description" class="col-sm-4 col-form-label fw-semibold fs-5">Description</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control description" name="description" id="description" value="<?=$dungeonObj->description?>"></textarea>
+                        <textarea class="form-control description" name="description" id="description" value="<?= $dungeonObj->description ?>"></textarea>
                         <div id="descriptionHelp" class="form-text error d-none text-danger">Le champ n'est pas valide</div>
                         <p class="error"> <?= $errors['description'] ?? '' ?> </p>
                     </div>

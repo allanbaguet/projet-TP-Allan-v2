@@ -36,9 +36,11 @@ try {
 
         $loggedInUser = User::authenticate($username, $password);
 
+
         //password_verify -> permet de récup le mdp de l'user et de le comparé avec le mdp haché en BDD
         if ($loggedInUser && password_verify($password, $loggedInUser->password)) {
             // récupe de l'ID de l'utilisateur pour récupérer ses informations depuis la BDD
+            
             $id_users = $loggedInUser->id_users;
     
             $getAllUser = User::get($id_users);
@@ -46,11 +48,13 @@ try {
             $_SESSION['username'] = $getAllUser->username;
             $_SESSION['id_users'] = $getAllUser->id_users;
             $_SESSION['role'] = $getAllUser->role;
+            // $_SESSION['status'] = $message;
+            
 
             header("location: accueil_controller.php");
             die;
         } else {
-            throw new Exception("Nom d'utilisateur ou mot de passe incorrect");
+            $errors['signIn'] = 'Nom d\'utilisateur ou mot de passe incorrect';
         }
     }
 

@@ -11,8 +11,7 @@ define('REGEX_PASSWORD', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{12,}$');
 define('AUTHORIZED_IMAGE_FORMAT', ['image/jpeg', 'image/png']);
 define('FILE_SIZE', [3*1000*1000]);
 
-// regex accueil -> 10 donjons
-define('NB_PER_PAGE', 10);
+
 
 
 

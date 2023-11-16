@@ -25,6 +25,14 @@ nav {
     color: black !important;
 }
 
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar.nav .nav-link {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+
 .custom-icon {
     font-size: 24px;
 }
@@ -65,6 +73,16 @@ form {
 
 #button-discord {
     background-color: #5865F2;
+    height: 6vh;
+    font-size: 16px;
+}
+
+.text-discord {
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-link {
+    display: inline;
 }
 
 h1 {
@@ -80,6 +98,11 @@ h2 {
 h3 {
     font-family: 'Bebas Neue', sans-serif;
     /* font-size: 25px; */
+}
+
+h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #f0f0f0;
 }
 
 p {
@@ -165,28 +188,74 @@ table {
 
 #searchForm {
     text-align: center;
-    /* Center the form content horizontally */
 }
 
-/* Default styles for all screen sizes */
+
 #search,
 .catégorie-home {
     width: 91%;
-    /* Full width for smaller screens */
 }
 
-/* Media query for screens with a minimum width of 992px (typical for desktops) */
-@media (min-width: 992px) {
 
+@media (min-width: 992px) {
     #search,
     .catégorie-home {
         width: 96%;
-        /* Adjust the width as needed for desktop screens */
     }
 }
 
 .img-user {
     height: 25vh;
+}
+
+.img-user-comm {
+    height: 18vh;
+}
+@media (max-width: 767px) {
+    .img-user-comm {
+        display: none;
+    }
+}
+
+#title-comm-green{
+    font-family: 'Roboto', sans-serif;
+    color: #6AA84F;
+    font-weight: 600;
+}
+
+#date-comm {
+    font-family: 'Roboto', sans-serif;
+    color: #f0f0f0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.img-profil-header {
+    height: 8vh;
+}
+
+@media (min-width: 991px) {
+    .username-responsive {
+        display: none;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .img-profil-header {
+        display: none;
+    }
+}
+@media (min-width: 1024px) {
+    li {
+        font-size: 14px;
+    }
+}
+@media (min-width: 1366px) {
+    li {
+        font-size: 16px;
+    }
 }
 
 /* .password-input {
@@ -201,4 +270,8 @@ table {
 
 .info-color {
     color: #6AA84F;
+}
+
+.bg-alert {
+    background-color: #6f8f61;
 }

@@ -5,10 +5,10 @@
             </svg>
         </a>
         <h1 class="text-center mb-4 ">Utilisateurs</h1>
-        <p class="text-center info-color fs-3 fw-bold">
+        <!-- <p class="text-center info-color fs-3 fw-bold"> -->
             <!-- message informatif, variable $delete / $archive définie dans le controlleur category -->
             <!-- cible l'action dans le paramètre d'url -->
-            <?php
+            <!-- <?php
             if ($delete === '1') {
                 echo 'Catégorie supprimée avec succès';
             } else if ($delete === '0') {
@@ -22,8 +22,15 @@
             } else if ($unarchive === '0') {
                 echo 'Erreur pendant le désarchivage de l\'élément';
             }
-            ?>
-        </p>
+            ?> -->
+        <!-- </p> -->
+        <div class="row">
+            <div class="col d-flex justify-content-center h-50">
+                <?php
+                FlashMessage::display();
+                ?>
+            </div>
+        </div>
         <div class="row">
             <div class="col my-5">
                 <table class="table table-bordered">

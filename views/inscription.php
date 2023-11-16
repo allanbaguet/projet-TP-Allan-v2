@@ -25,6 +25,7 @@
                                 <i class="bi bi-eye-fill toggle-password" id="togglePassword"></i>
                             </span>
                         </div>
+                        <p class="error"><?= $errors['password'] ?? '' ?></p>
                         <p class="text-white fst-italic">Le mot de passe doit contenir au moins 12 caractères, incluant des lettres majuscules, des lettres minuscules et des chiffres.</p>
                     </div>
                     <div class="mb-3">

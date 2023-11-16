@@ -29,6 +29,18 @@ try {
                 $errors['mail'] = 'l\'email n\'est pas valide';
             }
         }
+
+        // Vérification si l'adresse e-mail et/ou le pseudo existe déjà
+        $existingUserMail = User::getUserMail($mail);
+        $existingUserUsername = User::getUserUsername($username);
+
+        if ($existingUserMail) {
+            $errors['mail'] = 'Cette adresse e-mail est déjà utilisée.';
+        }
+        if ($existingUserUsername) {
+            $errors['username'] = 'Ce pseudo est déjà utilisé.';
+        }
+
         //récupération et validation du mot de passe
         $password = filter_input(INPUT_POST, 'password', FILTER_DEFAULT);
         $password2 = filter_input(INPUT_POST, 'password2', FILTER_DEFAULT);
@@ -47,29 +59,34 @@ try {
                 $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
             }
         }
-        try {
-            $userPicture = $_FILES['picture'];
-            if ($userPicture['error'] != 0) {
-                throw new Exception("Fichier non envoyé", 2);
+        //récupération et validation de l'image de profil
+        //ici la condition permet de vérifier si $_FILES n'est pas vide, et dans ce cas 
+        //passe dans le bloc try and catch, si aucune image, ne passe pas dedans
+        if (!empty($_FILES['picture']['name'])) {
+            try {
+                $userPicture = $_FILES['picture'];
+                if ($userPicture['error'] != 0) {
+                    throw new Exception("Fichier non envoyé", 2);
+                }
+                if (!in_array($userPicture['type'], AUTHORIZED_IMAGE_FORMAT)) {
+                    throw new Exception("Mauvaise extension de fichier", 3);
+                }
+                if ($userPicture['size'] > FILE_SIZE) {
+                    throw new Exception("Taille du fichier dépassé", 4);
+                }
+                //permet de recup l'extension -> $extension contient png
+                $extension = pathinfo($userPicture['name'], PATHINFO_EXTENSION);
+                //$fileName -> renomme le fichier, uniqid se base sur le timestamp donc id unique
+                //et permet de récupérer le nom du fichier
+                $fileName = uniqid('img_') . '.' . $extension;
+                //$from contient le nom temporaire du fichier
+                $from = $userPicture['tmp_name'];
+                $to = __DIR__ . '/../public/uploads/users/' . $fileName;
+                //déplace un fichier d'un endroit à un autre
+                move_uploaded_file($from, $to);
+            } catch (\Throwable $th) {
+                $errors['picture'] = $th->getMessage();
             }
-            if (!in_array($userPicture['type'], AUTHORIZED_IMAGE_FORMAT)) {
-                throw new Exception("Mauvaise extension de fichier", 3);
-            }
-            if ($userPicture['size'] > FILE_SIZE) {
-                throw new Exception("Taille du fichier dépassé", 4);
-            }
-            //permet de recup l'extension -> $extension contient png
-            $extension = pathinfo($userPicture['name'], PATHINFO_EXTENSION);
-            //$fileName -> renomme le fichier, uniqid se base sur le timestamp donc id unique
-            //et permet de récupérer le nom du fichier
-            $fileName = uniqid('img_') . '.' . $extension;
-            //$from contient le nom temporaire du fichier
-            $from = $userPicture['tmp_name'];
-            $to = __DIR__ . '/../public/uploads/users/' . $fileName;
-            //déplace un fichier d'un endroit à un autre
-            move_uploaded_file($from, $to);
-        } catch (\Throwable $th) {
-            $errors['picture'] = $th->getMessage();
         }
         if (empty($errors)) {
             $newUser = new User();
@@ -84,7 +101,14 @@ try {
             $saved = $newUser->insert();
             //$saved -> réponse de la méthode en question -> ici retourne un booléen
 
-            header("location: connexion_controller.php");
+            // Vérification si l'insertion est réussie
+            if ($saved) {
+                // FlashMessage::set("Votre inscription a été un succès", SUCCESS);
+                header("location: connexion_controller.php");
+                die;
+            } else {
+                $errors['insertion'] = 'Une erreur s\'est produite.';
+            }
         }
     }
 } catch (\Throwable $th) {
