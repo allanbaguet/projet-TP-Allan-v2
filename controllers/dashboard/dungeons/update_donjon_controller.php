@@ -7,6 +7,11 @@ require_once __DIR__ . '/../../../config/init.php';
 
 
 try {
+    //condition permettant de refusé l'accès à un utilisateur si il n'est pas admin en le renvoyant à l'accueil
+    if ($_SESSION['role'] != 2) {
+        header('location: /controllers/accueil_controller.php');
+        die;
+    }
     $errors = [];
     // $getUserList = User::get_all();
     $id_dungeons = intval(filter_input(INPUT_GET, 'id_dungeons', FILTER_SANITIZE_NUMBER_INT));

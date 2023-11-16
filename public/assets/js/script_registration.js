@@ -1,58 +1,58 @@
-let pseudoElement = document.querySelector('#pseudo');
-let pseudoHelp = document.querySelector('#pseudoHelp');
-let emailElement = document.querySelector('#email');
-let emailHelp = document.querySelector('#emailHelp');
+let usernameElement = document.querySelector('#username');
+let usernameHelp = document.querySelector('#usernameHelp');
+let mailElement = document.querySelector('#mail');
+let mailHelp = document.querySelector('#mailHelp');
 let password1 = document.querySelector('#password');
 let password2 = document.querySelector('#password2');
 let passwordCheck = document.querySelector('#passwordCheck');
 
 // liste des regex
-const regexPseudo = /^[a-zA-Z0-9_-]{3,16}$/;
-const regexMail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
-const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+const regexUsername = /^[a-zA-Z0-9_-]{3,16}$/;
+const regexMail = /^[\w\.\-]+@[\w\-]+\.[a-z]{2,5}$/;
+const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{12,}$/;
 
 // constante pour le pseudo
 const checkLastname = () => {
-    pseudoElement.classList.remove('border-danger', 'border-success', 'border-3')
+    usernameElement.classList.remove('border-danger', 'border-success', 'border-3')
     // permet de remove les class ajouté à bootstrap au moment de l'input 
-    pseudoHelp.classList.add('d-none');
+    usernameHelp.classList.add('d-none');
     // ajout de la classe d-none pour enlevé le message 
 
-    if (pseudoElement.value== '') {
+    if (usernameElement.value== '') {
         return
     }
 // permet de réinitialisé le champ si il est vide, return sert à stoppé la boucle si rien n'est écrit
 
     // refait une nouvelle instance à chaque input (évite le true/false/true/false ...)
-    let isValid = regexPseudo.test(pseudoElement.value)
+    let isValid = regexUsername.test(usernameElement.value)
 
     if (isValid == false) {
-        pseudoElement.classList.add('border-danger', 'border-3')
-        pseudoHelp.classList.remove('d-none');
+        usernameElement.classList.add('border-danger', 'border-3')
+        usernameHelp.classList.remove('d-none');
     } else {
-        pseudoElement.classList.add('border-success', 'border-3')
-        pseudoHelp.classList.add('d-none');
+        usernameElement.classList.add('border-success', 'border-3')
+        usernameHelp.classList.add('d-none');
     }
 }
 
 //constante pour l'email
-const checkEmail = () => {
-    emailElement.classList.remove('border-danger', 'border-success', 'border-3')
-    emailHelp.classList.add('d-none');
+const checkMail = () => {
+    mailElement.classList.remove('border-danger', 'border-success', 'border-3')
+    mailHelp.classList.add('d-none');
 
-    if (emailElement.value== '') {
+    if (mailElement.value== '') {
         return
     }
 
     let regexInstance = new RegExp(regexMail)
-    let isValid = regexInstance.test(emailElement.value)
+    let isValid = regexInstance.test(mailElement.value)
 
     if (isValid == false) {
-        emailElement.classList.add('border-danger', 'border-3')
-        emailHelp.classList.remove('d-none');
+        mailElement.classList.add('border-danger', 'border-3')
+        mailHelp.classList.remove('d-none');
     } else {
-        emailElement.classList.add('border-success', 'border-3')
-        emailHelp.classList.add('d-none');
+        mailElement.classList.add('border-success', 'border-3')
+        mailHelp.classList.add('d-none');
     }
 }
 
@@ -66,14 +66,15 @@ const validPassword = () => {
         return
     }
     let regexInstance = new RegExp(regexPassword)
-    let isPasswordValid = regexInstance.test(password1.value)
+    let isPassword1Valid = regexInstance.test(password1.value);
+    let doPasswordsMatch = password1.value === password2.value;
 
-    if (password1.value != password2.value) {
-        password2.classList.add('border-danger', 'border-3')
+    if (!isPassword1Valid || !doPasswordsMatch) {
+        password2.classList.add('border-danger', 'border-3');
         passwordCheck.classList.remove('d-none');
     } else {
-        password2.classList.add('border-success', 'border-3')
-        password1.classList.add('border-success', 'border-3')
+        password2.classList.add('border-success', 'border-3');
+        password1.classList.add('border-success', 'border-3');
         passwordCheck.classList.add('d-none');
     }
 
@@ -82,7 +83,7 @@ const validPassword = () => {
 
 
 // écouteur d'évènements à l'appui de la touche du clavier
-pseudoElement.addEventListener('keyup', checkLastname);
-emailElement.addEventListener('keyup', checkEmail);
+usernameElement.addEventListener('keyup', checkLastname);
+mailElement.addEventListener('keyup', checkMail);
 password1.addEventListener('keyup', validPassword);
 password2.addEventListener('keyup', validPassword);

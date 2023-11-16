@@ -5,6 +5,13 @@
             </svg>
         </a>
         <h1 class="text-center">Création de page guide</h1>
+        <div class="row">
+            <div class="col d-flex justify-content-center h-50">
+                <?php
+                FlashMessage::display();
+                ?>
+            </div>
+        </div>
         <div class="row my-5">
             <div class="col-2"></div>
             <div class="col-8">

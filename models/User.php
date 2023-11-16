@@ -258,26 +258,66 @@ class User
         return $nbRows > 0 ? true : false;
     }
 
-    public static function authenticate(string $username, string $password): object
+    public static function authenticate(string $username, string $password): ?object
     {
-    $pdo = Database::connect();
-    $sql = 'SELECT * FROM `users` WHERE `username` = :username AND `deleted_at` IS NULL';
-    $sth = $pdo->prepare($sql);
-    $sth->bindValue(':username', $username);
-    // $sth->bindValue(':password', $password);   
-    $sth->execute();
-    $result = $sth->fetch(PDO::FETCH_OBJ);
-    // return $result;
-    // Vérifiez si le mot de passe correspond
-    if ($result && password_verify($password, $result->password)) {
-        return $result; // Authentification réussie, retourne l'objet User
+        $pdo = Database::connect();
+        $sql = 'SELECT * FROM `users` WHERE `username` = :username AND `deleted_at` IS NULL';
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':username', $username);
+        $sth->execute();
+        $result = $sth->fetch(PDO::FETCH_OBJ);
+
+        // Vérifiez si le mot de passe correspond
+        if ($result && password_verify($password, $result->password)) {
+            return $result;
+        }
+        return null;
     }
 
-    return null; // Authentification échouée, retourne null
+    /**
+     * méthode permettant de récupérer l'username afin de vérifier si il n'existe pas déjà en BDD
+     * @param string $username
+     * @param string $mail
+     * 
+     * @return object
+     */
+    public static function getUserUsername(string $username): ?object
+    {
+        $pdo = Database::connect();
+        $sql = 'SELECT * FROM `users` WHERE `username` = :username AND `deleted_at` IS NULL';
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':username', $username);
+        $sth->execute();
+        $result = $sth->fetch(PDO::FETCH_OBJ);
+        // return $result;
+        if ($result) {
+            return $result;
+        } else {
+            return null;
+        }
     }
 
 
-
-    
-
+    /**
+     * méthode permettant de récupérer l'email afin de vérifier si il n'existe pas déjà en BDD
+     * @param string $username
+     * @param string $mail
+     * 
+     * @return object
+     */
+    public static function getUserMail(string $mail): ?object
+    {
+        $pdo = Database::connect();
+        $sql = 'SELECT * FROM `users` WHERE `mail` = :mail AND `deleted_at` IS NULL';
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':mail', $mail);
+        $sth->execute();
+        $result = $sth->fetch(PDO::FETCH_OBJ);
+        // return $result;
+        if ($result) {
+            return $result;
+        } else {
+            return null;
+        }
+    }
 }

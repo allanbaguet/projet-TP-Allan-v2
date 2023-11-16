@@ -6,6 +6,11 @@ require_once __DIR__ . '/../../../config/init.php';
 
 
 try {
+    //condition permettant de refusé l'accès à un utilisateur si il n'est pas admin en le renvoyant à l'accueil
+    if ($_SESSION['role'] != 2) {
+        header('location: /controllers/accueil_controller.php');
+        die;
+    }
     $title = "DofusUniverse - Création guide";
     $errors = [];
     $getUserList = User::get_all();
@@ -86,6 +91,7 @@ try {
             $newGuide->setId_users($id_users);
             //on hydrate l'objet de toute les propriété
             $saved = $newGuide->insert();
+            FlashMessage::set("Guide crée avec succès", SUCCESS);
             //$saved -> réponse de la méthode en question -> ici retourne un booléen
         }
     }

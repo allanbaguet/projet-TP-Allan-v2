@@ -6,17 +6,22 @@
                 <fieldset>
                     <div class="mb-3">
                         <label for="username" class="form-label fs-5 my-3">Pseudo</label>
-                        <input type="text" class="form-control" id="username" name="username" aria-describedby="pseudoHelp">
-                        <div id="usernameHelp" class="form-text"></div>
+                        <input type="text" class="form-control" id="username" name="username" aria-describedby="pseudoHelp" pattern="<?= REGEX_PSEUDO ?>" required>
+                        <div id="usernameSignIn" class="form-text"></div>
+                        <p class="error"> <?= $errors['username'] ?? '' ?> </p>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label fs-5 my-3">Mot de passe</label>
-                        <input type="password" class="form-control" name="password" id="password">
+                        <input type="password" class="form-control" name="password" id="password" pattern="<?= REGEX_PASSWORD ?>" required>
+                        <p class="error"> <?= $errors['password'] ?? '' ?> </p>
+                        <?php if (isset($errors['signIn'])) : ?>
+                            <p class="error alert alert-dismissible alert-danger fw-bold"> <?= $errors['signIn'] ?? '' ?> </p>
+                        <?php endif; ?>
                     </div>
                     <div class="d-flex justify-content-center py-4">
                         <button id="createAccount" type="submit" class="btn">Connexion</button>
                     </div>
-                </fieldset> 
+                </fieldset>
             </form>
         </div>
     </div>

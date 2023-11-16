@@ -6,10 +6,15 @@ require_once __DIR__ . '/../../../config/init.php';
 
 
 try {
+    //condition permettant de refusé l'accès à un utilisateur si il n'est pas admin en le renvoyant à l'accueil
+    if ($_SESSION['role'] != 2) {
+        header('location: /controllers/accueil_controller.php');
+        die;
+    }
     $title = "DofusUniverse - Création page donjon";
     $errors = [];
     $getUserList = User::get_all();
-    
+
     if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         //récupération et validation du titre du donjon
         $main_title = filter_input(INPUT_POST, 'main_title', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -87,6 +92,7 @@ try {
             $newDungeon->setId_users($id_users);
             //on hydrate l'objet de toute les propriété
             $saved = $newDungeon->insert();
+            FlashMessage::set("Donjon crée avec succès", SUCCESS);
             //$saved -> réponse de la méthode en question -> ici retourne un booléen
         }
     }

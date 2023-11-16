@@ -54,5 +54,21 @@
                     </div>
                 </a>
             </div>
+            <div class="col-xl-3 col-md-6 mb-4 my-5">
+                <a class="link-underline link-underline-opacity-0" href="/controllers/dashboard/commentaries/commentaries_dash_controller.php">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <p class="text-xs font-weight-bold text-black text-uppercase mb-1"> Commentaires</p>
+                                </div>
+                                <div class="col-auto">
+                                <i class="bi bi-pen-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>

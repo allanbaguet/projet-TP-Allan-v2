@@ -1,14 +1,19 @@
-<?php 
+<?php
 require_once __DIR__ . '/../../../config/database.php';
 require_once __DIR__ . '/../../../models/User.php';
 require_once __DIR__ . '/../../../config/regex.php';
 require_once __DIR__ . '/../../../config/init.php';
 
 try {
+    //condition permettant de refusé l'accès à un utilisateur si il n'est pas admin en le renvoyant à l'accueil
+    if ($_SESSION['role'] != 2) {
+        header('location: /controllers/accueil_controller.php');
+        die;
+    }
     $errors = [];
     //intval -> permet de nettoyer un entier
     $id_users = intval(filter_input(INPUT_GET, 'id_users', FILTER_SANITIZE_NUMBER_INT));
-        //permet ici de filtrer le paramètre d'url id_users
+    //permet ici de filtrer le paramètre d'url id_users
     $userObj = User::get($id_users);
     //pour appelé la méthode static -> appel de la classe avec :: nom de la fonction
     //variable qui appel la classe et sa méthode -> récupére l'id de l'utilisateur
@@ -95,12 +100,12 @@ try {
             //on hydrate l'objet de toute les propriété
             $saved = $newUser->update();
         }
-            //$saved -> réponse de la méthode en question -> ici retourne un booléen
-            if ($saved == true) {
-                //permet la redirection à la liste des catégories à la modification
-                header('location: /controllers/dashboard/users/utilisateurs_controller.php');
-                die;
-            }
+        //$saved -> réponse de la méthode en question -> ici retourne un booléen
+        if ($saved == true) {
+            //permet la redirection à la liste des catégories à la modification
+            header('location: /controllers/dashboard/users/utilisateurs_controller.php');
+            die;
+        }
     }
 } catch (\Throwable $th) {
     $error = $th->getMessage();
