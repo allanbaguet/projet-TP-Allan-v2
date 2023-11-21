@@ -3,6 +3,8 @@ require_once __DIR__ . '/../../../config/database.php';
 require_once __DIR__ . '/../../../models/User.php';
 require_once __DIR__ . '/../../../config/init.php';
 
+$modalDelete = '/public/assets/js/delete_user_modal.js';
+
 try {
     //condition permettant de refusé l'accès à un utilisateur si il n'est pas admin en le renvoyant à l'accueil
     if ($_SESSION['role'] != 2) {

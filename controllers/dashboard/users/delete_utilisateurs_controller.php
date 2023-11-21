@@ -9,8 +9,10 @@ if($_SESSION['role'] != 2){
     die;
 }
 
+$title = 'DofusUniverse - Suppression utilisateur';
 $id_users = intval(filter_input(INPUT_GET, 'id_users', FILTER_SANITIZE_NUMBER_INT));
 $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
+$userImg = User::get($id_users);
 //on récupère le paramètre d'URL qui a été prélablement nettoyer pour l'utiliser ensuite dans la méthode archive
 if ($action === 'archive') {
     $archived = (int)User::archive($id_users);
@@ -21,11 +23,9 @@ if ($action === 'archive') {
     die;
 } elseif ($action === 'delete') {
     $deleted = (int)User::delete($id_users);
-    // if ($deleted) {
-    //     //condition supplémentaire pour supprimer l'image si il y en as une
-    //     $UserObj = User::get($id_users);
-    //     //besoin du nom de photo -> picture donc l'appel à la méthode ::get ou il y est stocké
-    //     @unlink(__DIR__ . '/../../../public/uploads/users/' . $UserObj->picture);
+    //condition supplémentaire pour supprimer l'image associé à l'utilisateur
+    // besoin du nom de photo -> picture donc l'appel à la méthode ::get ou il y est stocké
+    @unlink(__DIR__ . '/../../../public/uploads/users/' . $userImg->picture);
     // }
     //si dans le param d'URL, delete est défini, donc condition passe dans la méthode delete par $deleted
     FlashMessage::set("Utilisateur supprimé avec succès" , SUCCESS);

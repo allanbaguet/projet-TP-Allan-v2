@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-1"></div>
-        <div class="col-10 p-3 rounded fs-5 my-4" id="bgColorText">
+        <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
             <p>Un donjon, est un lieu clos dans lequel une équipe de personnages devra affronter plusieurs groupes de monstres dans plusieurs salles.
                 Dans chaque donjon se trouve un Boss généralement accompagné d'autres monstres
             </p>
@@ -20,7 +20,7 @@
             <div class="col-1"></div>
             <div class="col-10 mt-5 my-5">
                 <h2>Recherchez un donjon</h2>
-                <form action="" id="searchForm">
+                <form id="searchForm">
                     <input type="search" name="search" id="search" class="input-home" value="<?= $search ?? '' ?>" placeholder="Rechercher...">
                     <button type="submit" class="btn-research">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16">
@@ -28,7 +28,6 @@
                         </svg>
                     </button>
                 </form>
-
             </div>
         </div>
     </div>
@@ -40,8 +39,8 @@
         <?php
         foreach ($getDungeonList as $dungeonList) { ?>
             <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100" id="bg-color-body-card">
-                <h5 class="card-title p-3 text-center fs-4" id="title-card-white"><?=$dungeonList->main_title?></h5>
+            <div class="card h-100 bg-color-body-card">
+                <h5 class="card-title p-3 text-center fs-4 title-card-white"><?=$dungeonList->main_title?></h5>
                 <a href="/donjon?id_dungeons=<?=$dungeonList->id_dungeons?>">
                     <img src="/public/assets/img/donjons/image-donjon.jpg" class="card-img-top img-fluid desktop-img" alt="donjons">
                 </a>
@@ -49,8 +48,8 @@
                     <p class="card-text p-3">Trouver ici le guide complet pour le donjon :
                         <span class="fw-bold"><?=$dungeonList->main_title?></span>
                     </p>
-                    <div class="d-flex justify-content-center card-footer p-2" id="bg-color-top-bottom-card">
-                        <a href="/donjon?id_dungeons=<?=$dungeonList->id_dungeons?>" class="btn" id="button-green">C'est parti !</a>
+                    <div class="d-flex justify-content-center card-footer p-2 bg-color-top-bottom-card">
+                        <a href="/donjon?id_dungeons=<?=$dungeonList->id_dungeons?>" class="btn button-green">C'est parti !</a>
                     </div>
                 </div>
             </div>
@@ -58,38 +57,3 @@
         <?php } ?>
         </div>
 </div>
-
-
-        <!-- <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100" id="bg-color-body-card">
-                <h5 class="card-title p-3 text-center fs-4" id="title-card-white">Grange du tournesol affamé</h5>
-                <a href="/controllers/guides_controller.php">
-                    <img src="/public/assets/img/donjons/champs/tournesol-affame-card.png" class="card-img-top img-fluid desktop-img" alt="histoire-de-dofus">
-                </a>
-                <div class="card-body p-0">
-                    <p class="card-text p-3">Trouver ici le guide complet pour le donjon :
-                        <span class="fw-bold">Grange du tournesol affamé</span>
-                    </p>
-                    <div class="d-flex justify-content-center card-footer p-2" id="bg-color-top-bottom-card">
-                        <a href="/controllers/guides_controller.php" class="btn" id="button-green">C'est parti !</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100" id="bg-color-body-card">
-                <h5 class="card-title p-3 text-center fs-4" id="title-card-white">Cour du bouftou royal</h5>
-                <a href="/controllers/guides_controller.php">
-                    <img src="/public/assets/img/donjons/bouftou/bouftou-royal.png" class="card-img-top img-fluid desktop-img" alt="histoire-de-dofus">
-                </a>
-                <div class="card-body p-0">
-                    <p class="card-text p-3">Trouver ici le guide complet pour le donjon :
-                        <span class="fw-bold">Cour du bouftou royal</span>
-                    </p>
-                    <div class="d-flex justify-content-center card-footer p-2" id="bg-color-top-bottom-card">
-                        <a href="/controllers/guides_controller.php" class="btn" id="button-green">C'est parti !</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->

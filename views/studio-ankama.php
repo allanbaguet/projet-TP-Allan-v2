@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-1"></div>
-        <div class="col-10 p-3 rounded fs-5 my-4" id="bgColorText">
+        <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
             <p>Ankama est une société française détenant le capital de plusieurs entreprises spécialisées dans le
                 domaine de la création numérique et artistique.</p>
 
@@ -28,7 +28,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-1"></div>
-        <div class="col-10 p-3 rounded fs-5 my-4" id="bgColorText">
+        <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
             <p>Ankama est créée le 15 mai 2001 et s'engage dans le développement web, à l'initiative de trois amis
                 nordistes, Camille « Kam » Chafer (directeur technique), Anthony « Tot » Roux (directeur artistique)
                 et Emmanuel Darras (directeur commercial), issus de la même agence web. Passionnés de jeux vidéo,
@@ -57,7 +57,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-1"></div>
-        <div class="col-10 p-3 rounded fs-5 my-4" id="bgColorText">
+        <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
             <p>Dès 2005 est pensé une suite vidéoludique à Dofus, dans un système transmédia : Wakfu.
                 Sa sortie initiale est prévue pour 2007. Dans la foulée, une nouvelle branche se crée, Ankama
                 Animations, pour réaliser le dessin animé homonyme. Le 30 octobre 2008, la série télévisée
@@ -85,7 +85,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-1"></div>
-        <div class="col-10 p-3 rounded fs-5 my-5" id="bgColorText">
+        <div class="col-10 p-3 rounded fs-5 my-5 bgColorText">
             <p>Ankama se développe à l'international dès les années 2000 avec deux filiales aux États-Unis et au
                 Japon
                 , et prend de l'expansion avec l'arrivée d'Olivier Comte comme directeur général et la création de

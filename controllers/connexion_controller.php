@@ -1,9 +1,9 @@
 <?php
 require_once __DIR__ . '/../models/User.php';
 require_once __DIR__ . '/../config/regex.php';
-// require_once __DIR__ . '/../config/init.php';
+require_once __DIR__ . '/../config/init.php';
 
-session_start();
+// session_start();
 
 try {
     $title = 'DofusUniverse - Connexion';

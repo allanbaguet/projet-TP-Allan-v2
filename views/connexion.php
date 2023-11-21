@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-md-6 mx-auto">
             <h2 class="text-uppercase text-center text-white my-4">Connexion</h2>
-            <form id="connexionForm" action="" method="POST">
+            <form id="connexionForm" method="POST">
                 <fieldset>
                     <div class="mb-3">
                         <label for="username" class="form-label fs-5 my-3">Pseudo</label>
-                        <input type="text" class="form-control" id="username" name="username" aria-describedby="pseudoHelp" pattern="<?= REGEX_PSEUDO ?>" required>
+                        <input type="text" class="form-control" id="username" name="username" aria-describedby="pseudoHelp" pattern="<?= REGEX_PSEUDO ?>" autofocus required>
                         <div id="usernameSignIn" class="form-text"></div>
                         <p class="error"> <?= $errors['username'] ?? '' ?> </p>
                     </div>
