@@ -66,13 +66,6 @@
                                 <td><?php echo isset($commentarieList->id_dungeons) ? '✗' : ''; ?></td>
                                 <td><?php echo isset($commentarieList->id_guides) ? '✗' : ''; ?></td>
                                 <td class="d-flex justify-content-evenly">
-                                    <!-- <a href="/controllers/dashboard/commentaries/update_commentaries_controller.php?id_comments=<?= $commentarieList->id_comments ?>">
-                                        <button class="btn btn-transparent" title="Modifier l'élément">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                                                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                                            </svg>
-                                        </button>
-                                    </a> -->
                                     <a href="/controllers/dashboard/commentaries/delete_commentaries_controller.php?action=archive&id_comments=<?= $commentarieList->id_comments ?>">
                                         <button class="btn btn-transparent" title="Archiver l'élément">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-box2" viewBox="0 0 16 16">
@@ -123,14 +116,30 @@
                                         </svg>
                                     </button>
                                 </a>
-                                <a href="/controllers/dashboard/commentaries/delete_commentaries_controller.php?action=delete&id_comments=<?= $commentarieArchived->id_comments ?>">
-                                    <button class="btn btn-transparent" title="Supprimer l'élément">
+                                <!-- Modal de confirmation de suppression -->
+                                <div class="modal" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="confirmationModalLabel">Confirmation de suppression</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Êtes-vous sûr de vouloir supprimer ce commentaire ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                    <a id="confirmDeleteButton" href="/controllers/dashboard/commentaries/delete_commentaries_controller.php?action=delete&id_comments=<?= $commentarieArchived->id_comments ?>" class="btn btn-danger">Confirmer la suppression</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-transparent" title="Supprimer l'élément" data-bs-toggle="modal" data-bs-target="#confirmationModal">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
                                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                                         </svg>
                                     </button>
-                                </a>
                             </td>
                         </tr>
                     <?php } ?>

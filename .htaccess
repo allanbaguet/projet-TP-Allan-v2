@@ -28,11 +28,17 @@ RewriteRule ^studio-ankama$ /controllers/studio_ankama_controller.php [L]
 # Réécriture d'URL pour la page encyclopédie
 RewriteRule ^encyclopédie$ /controllers/encyclopedie_controller.php [L]
 
-# Réécriture d'URL pour la page donjon
+# Réécriture d'URL pour la page des contenu donjons
 RewriteRule ^donjon$ /controllers/page_donjon_controller.php [L]
 
-# Réécriture d'URL pour la page guide
+# Réécriture d'URL pour la page de la liste des donjons
+RewriteRule ^liste-donjons$ /controllers/donjons_controller.php [L]
+
+# Réécriture d'URL pour la page des contenu guides
 RewriteRule ^guide$ /controllers/page_guide_controller.php [L]
+
+# Réécriture d'URL pour la page de la liste des guides
+RewriteRule ^liste-guides$ /controllers/guides_controller.php [L]
 
 # Réécriture d'URL pour la page profil
 RewriteRule ^profil$ /controllers/user_profil_controller.php [L]

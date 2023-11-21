@@ -42,7 +42,7 @@
                     <p class="card-text p-3">Trop bien ce guide !</p>
                 </div>
                 <div class="d-flex justify-content-center card-footer p-3" id="bg-color-top-bottom-card">
-                    <a href="/controllers/donjons_controller.php" class="btn" id="button-green">Voir</a>
+                    <a href="#" class="btn" id="button-green">Voir</a>
                 </div>
             </div>
         </div>

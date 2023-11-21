@@ -80,8 +80,6 @@ const validPassword = () => {
 
 }
 
-
-
 // écouteur d'évènements à l'appui de la touche du clavier
 usernameElement.addEventListener('keyup', checkLastname);
 mailElement.addEventListener('keyup', checkMail);

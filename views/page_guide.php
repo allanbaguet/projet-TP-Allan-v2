@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <a href="/controllers/guides_controller.php">
+    <a href="/liste-guides">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-left-square-fill arrow-left m-4" viewBox="0 0 16 16">
             <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z" />
         </svg>
@@ -37,7 +37,6 @@
                 <div class="d-flex flex-wrap p-2 border-top border-4">
                     <div class="user-info col-sm-10 col-md-4 mb-3 mt-3">
                         <img src="/public/uploads/users/<?= $guideCommentarie->picture ?>" class="img-user-comm img-fluid ms-3" alt="user_image">
-                        <!-- <p class="text-center" id="title-card-white"><?= $guideCommentarie->username ?></p> -->
                     </div>
                     <div class="comment-text col-sm-10 col-md-8 ml-3 pt-2 pb-2 ">
                         <a class="link-underline link-underline-opacity-0" href="/profil?id_users=<?= $guideCommentarie->id_users ?>">
@@ -46,7 +45,6 @@
                         <p><?= $guideCommentarie->text ?></p>
                     </div>
                 </div>
-                <!-- <hr class=""> -->
             <?php
             }
             ?>
@@ -60,8 +58,6 @@
                     <button type="submit" class="btn" id="button-green">Envoyer le commentaire</button>
                 </div>
             </form>
-            <!-- Affichage des commentaires existants -->
-            <!-- Vous devrez inclure la logique pour récupérer et afficher les commentaires ici -->
         </div>
     </div>
 </div>

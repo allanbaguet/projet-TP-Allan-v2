@@ -77,6 +77,17 @@ try {
             $to = __DIR__ . '/../../../public/uploads/dungeons/' . $fileName;
             //déplace un fichier d'un endroit à un autre
             move_uploaded_file($from, $to);
+
+            $imgSrcJpeg = imagecreatefromjpeg($to);
+            //attend en 3éme param quality, si pas défini, est a 70% de base
+            $imgQualityJpeg = imagejpeg($imgSrcJpeg, $to);
+
+            $imgSrcJpeg = imagecreatefromjpeg($to);
+            //attend en 3éme param quality, si pas défini, est a 70% de base
+            $imgQualityJpeg = imagejpeg($imgSrcJpeg, $to);
+
+
+
         } catch (\Throwable $th) {
             $errors['picture'] = $th->getMessage();
         }

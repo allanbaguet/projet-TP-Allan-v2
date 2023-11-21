@@ -39,6 +39,7 @@
                             <img class="img-fluid" src="/public/uploads/dungeons/<?= $dungeonObj->picture ?>" alt="image donjon">
                         </div>
                         <input type="file" class="form-control picture" name="picture" id="picture">
+                        <p class="text-white fst-italic">Format jpg/jpeg autorisé</p>
                         <div id="pictureHelp" class="form-text error d-none text-danger">Le champ n'est pas valide</div>
                         <p class="error"> <?= $errors['picture'] ?? '' ?> </p>
                     </div>
@@ -58,7 +59,7 @@
                 <div class="d-flex justify-content-evenly py-4">
                     <!-- <div id="clonePreset" class="btn btn-lg btn-primary mb-3"> + </div> -->
 
-                    <button type="submit" class="btn" id="button-green">Valider</button>
+                    <button type="submit" class="btn button-green">Valider</button>
 
                     <!-- <button id="removeClone" type="button" class="btn btn-danger btn-lg mb-3"> - </button> -->
 

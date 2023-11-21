@@ -2,6 +2,9 @@
 require_once __DIR__ . '/../models/User.php';
 require_once __DIR__ . '/../config/FlashMessage.php';
 
+// Définir la durée de vie maximale de la session à 20 minutes (20 * 60 secondes)
+ini_set('session.gc_maxlifetime', 10);
+
 
 session_start();
 

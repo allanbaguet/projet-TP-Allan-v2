@@ -7,7 +7,7 @@
                     <p class="fw-bold fs-5">* Champs requis</p>
                     <div class="mb-3">
                         <label for="username" class="form-label fs-5 my-3">Pseudo *</label>
-                        <input type="text" class="form-control" id="username" name="username" value="Baesil" autocomplete="username" placeholder="Entrez votre pseudo" maxlength="50" pattern="<?= REGEX_PSEUDO ?>" required>
+                        <input type="text" class="form-control" id="username" name="username" value="Baesil" autocomplete="username" placeholder="Entrez votre pseudo" maxlength="50" pattern="<?= REGEX_PSEUDO ?>" autofocus required>
                         <p id="usernameHelp" class="form-text error d-none text-danger">Ce champ n'est pas valide</p>
                         <p class="error"> <?= $errors['username'] ?? '' ?> </p>
                     </div>
@@ -22,7 +22,7 @@
                         <div class="input-group">
                             <input type="password" class="form-control" name="password" id="password" value="Aa1bcdefghij" pattern="<?= REGEX_PASSWORD ?>" placeholder="Entrez votre mot de passe" required>
                             <span class="input-group-text">
-                                <i class="bi bi-eye-fill toggle-password" id="togglePassword"></i>
+                                <i class="bi bi-eye-fill toggle-password togglePassword"></i>
                             </span>
                         </div>
                         <p class="error"><?= $errors['password'] ?? '' ?></p>
@@ -33,7 +33,7 @@
                         <div class="input-group">
                             <input type="password" class="form-control" name="password2" id="password2" value="Aa1bcdefghij" pattern="<?= REGEX_PASSWORD ?>" placeholder="Entrez votre mot de passe à nouveau" required>
                             <span class="input-group-text">
-                                <i class="bi bi-eye-fill toggle-password" id="togglePassword"></i>
+                                <i class="bi bi-eye-fill toggle-password togglePassword"></i>
                             </span>
                         </div>
                         <p id="passwordCheck" class="form-text error d-none text-danger">Le mot de passe n'est pas identique</p>

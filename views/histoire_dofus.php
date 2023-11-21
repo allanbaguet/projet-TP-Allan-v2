@@ -11,7 +11,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-1"></div>
-            <div class="col-10 p-3 rounded fs-5 my-4" id="bgColorText">
+            <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
                 <p>Dofus est un jeu de rôle en ligne massivement multijoueur (MMORPG) français développé
                     et édité par Ankama puis par sa filiale Ankama Games à sa création en 2004.</p>
 
@@ -30,7 +30,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-1"></div>
-            <div class="col-10 p-3 rounded fs-5 my-4" id="bgColorText">
+            <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
                 <p>Après son succès durable dans la fin des années 2000 et début 2010, Dofus perd de l'ampleur.</p>
 
                 <p>L'équipe choisit donc de fusionner certains de ses serveurs pour rassembler la communauté. </p>
@@ -45,7 +45,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-1"></div>
-            <div class="col-10 p-3 rounded fs-5 my-4" id="bgColorText">
+            <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
                 <p>En plus de sa version PC pour Mac, Linux et Windows, Ankama a sorti en 2016
                     une version Mobile intitulée « Dofus Touch ». </p>
 
@@ -62,7 +62,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-1"></div>
-            <div class="col-10 p-3 rounded fs-5 my-4" id="bgColorText">
+            <div class="col-10 p-3 rounded fs-5 my-4 bgColorText">
                 <p>Le mercredi 30 septembre 2020, pour célébrer le premier anniversaire des serveurs Dofus Rétro,
                     de nouveaux serveurs spécifiquement « monocomptes » sont ouverts. </p>
 
@@ -95,7 +95,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-1"></div>
-            <div class="col-10 p-3 rounded fs-5 my-5" id="bgColorText">
+            <div class="col-10 p-3 rounded fs-5 my-5 bgColorText">
                 <p>Dofus prend place dans le Monde des Douze, un univers médiéval-fantastique. Les joueurs doivent
                     retrouver six Dofus primordiaux,
                     des œufs de dragons conférant une grande puissance à leur porteur, qui sont dispersés aux quatre

@@ -6,7 +6,6 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-
 #imgBackground {
     background-image: url(/public/assets/img/404_desktop.jpg);
     background-repeat: no-repeat;
@@ -14,34 +13,28 @@ body {
     height: 100vh;
     /* width: 100vw; */
 }
-
 h1 {
     font-family: 'Bebas Neue', sans-serif;
     color: #f0f0f0;
 }
-
 p {
     font-family: 'Roboto', sans-serif;
     color: #f0f0f0;
 }
-
 #button-green {
     background-color: #6AA84F;
     font-family: 'Roboto', sans-serif;
     color: #f0f0f0;
     font-weight: 600;
 }
-
 .bloc-404 {
     padding: 15%;
 }
-
 @media only screen and (max-width: 765px) {
     #imgBackground {
         background-image: url(/public/assets/img/404_tablet.jpg);
         background-repeat: no-repeat;
         background-size: auto;
         height: 100vh;
-        /* width: 100vw; */
     }
 }
