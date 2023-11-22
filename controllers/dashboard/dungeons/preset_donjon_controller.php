@@ -82,12 +82,6 @@ try {
             //attend en 3éme param quality, si pas défini, est a 70% de base
             $imgQualityJpeg = imagejpeg($imgSrcJpeg, $to);
 
-            $imgSrcJpeg = imagecreatefromjpeg($to);
-            //attend en 3éme param quality, si pas défini, est a 70% de base
-            $imgQualityJpeg = imagejpeg($imgSrcJpeg, $to);
-
-
-
         } catch (\Throwable $th) {
             $errors['picture'] = $th->getMessage();
         }
